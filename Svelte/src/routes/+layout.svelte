@@ -1,30 +1,108 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
 
-  let BG_color = "#222222"
+  let BG_color = "#000000bf"
   let TXT_color = "#FFFFFF"
 	let { children } = $props();
 </script>
 <style>
-.toolbar {
-  background-color:#FF0000; 
-  color: #FF0000;
-  position:relative;
-  top:0%;
-  left:0%;
-  font-size: 18pt;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+  :global(html), :global(body){
+    width: 100%;
+    min-height: 100%;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: lighter;
+    font-style: normal;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+  }
+  :global(body::-webkit-scrollbar) {
+    display: none;
+  }
+
+  .content {
+    background-color:red;
+  }
+
+  .gradient_wrapper {
+    border: 1px solid;
+    width: 100%;
+    min-height: auto;
+    background: linear-gradient(to bottom, #1111AA, #FF3388, #002222);
+    background-repeat: no-repeat; /* prevents looping */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+  }
+
+  .star_backdrop {
+    background-image: url("$lib/assets/Stars.svg");
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    min-height:100%;
+    width:100%;
+  }
+
+  .toolbar {
+    background: linear-gradient(to right, #220000, #440000);
+    background-color:#220000; 
+    position:sticky;
+    margin: 0px;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    top:0px;
+    left:0px;
+    width:100vw;
+    font-size: 14pt;
+    z-index: 1000;
+  }
+
+
+  .toolbar_link {
+    color: #FFFFFF;
+    background-color: #b54a7280;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px 10px;
+    padding: 15px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+  }
+  :global(h1){
+    font-size: 62pt;
+    font-weight: lighter;
+  }
+  :global(p){
+    font-size: 24pt;
+  }
 </style>
+
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
 <div class="toolbar">
-<a href="/">home</a>
-<a href="/textboxes">textboxes</a>
+  <a class="toolbar_link" href="/">Hjem</a>
+  <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
+  <a class="toolbar_link" href="/game">Spel</a>
+  <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
+  <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
+  <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
+  <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
 </div>
 
-<div style="background-color:{BG_color}; color:{TXT_color}">
-{@render children?.()}
+<div class="content" style="margin:0;padding:0;">
+  <div class="gradient_wrapper">
+    <div class="star_backdrop">
+      {@render children?.()}
+    </div>
+  </div>
 </div>
