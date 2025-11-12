@@ -31,12 +31,13 @@
   .gradient_wrapper {
     border: 1px solid;
     width: 100%;
-    min-height: auto;
-    background: linear-gradient(to bottom, #1111AA, #FF3388, #002222);
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(to bottom right, #111188, #FF3366, #002200);
     background-repeat: no-repeat; /* prevents looping */
-    background-size: cover;
     margin: 0;
     padding: 0;
+    z-index: -1;
   }
 
   .star_backdrop {
@@ -44,8 +45,10 @@
     margin: 0;
     padding: 0;
     color: #FFFFFF;
-    min-height:100%;
+    min-height: 100vh;
+    height: 100%;
     width:100%;
+    z-index: 0;
   }
 
   .toolbar {
@@ -81,7 +84,12 @@
   }
   :global(p){
     font-size: 24pt;
+    margin: 1pt 10%;
   }
+  :global(section){
+    margin: 1pt 10%;
+  }
+
 </style>
 
 

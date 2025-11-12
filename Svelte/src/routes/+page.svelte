@@ -19,14 +19,14 @@
   })
 </script>
 <style>
-.intro {
+:global(.intro) {
 display: block; /* or inline-block with a defined width */
 text-align: center;
-width: 1fr; /* Example width */
+width: 1fr; 
 }
 .intro_banner {
   block-size: 450px;
-  background-color: #00000080;
+  background-color: #000000BD;
 }
 .centering_container {
   text-align: center;
@@ -48,7 +48,7 @@ width: 1fr; /* Example width */
 </style>
 <div class="intro_banner">
 <h1 class="intro" style="padding-top:60px;">Velkommen!</h1>
-<p class="intro">Hva heter du?</p>
+<p class="intro" style="padding-bottom:10px;">Hva heter du?</p>
 <!--<code class="intro">&lt;script&gt;</code><br/>-->
 {#if !nameConfirmed}
 <label class="intro">Fornavn: <input bind:value={fornavn} /></label><br>
