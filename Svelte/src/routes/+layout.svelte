@@ -100,7 +100,7 @@
 <div class="toolbar">
   <a class="toolbar_link" href="/">Hjem</a>
   <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
-  <a class="toolbar_link" href="/game">Spel</a>
+  <a class="toolbar_link" href="/sim">Sim</a>
   <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
   <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
   <a class="toolbar_link" href="/textboxes">Tekstbokser</a>

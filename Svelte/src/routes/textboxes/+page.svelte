@@ -3,6 +3,8 @@
 	import src2 from '$lib/assets/smiling_man2.png';
 	import src3 from '$lib/assets/smiling_man3.png';
 	import src4 from '$lib/assets/smiling_man4.png';
+	import src5 from '$lib/assets/smiling_man5.png';
+	import src6 from '$lib/assets/smiling_man6.png';
 </script>
 <style>
 section {
@@ -117,21 +119,21 @@ Fleire yrke krev no digital kompetanse, og mange kan arbeide heimanfrå takka ve
   </p>
   </div>
   <div class="heading1Div">
-    <h1 class="intro">Diverse</h1>
+    <h1 class="intro">Utdanning</h1>
   </div>
   <div class="container1">
-  <img class="image_1" src={src3} alt="A slightly creepy man against orange background"/>
+  <img class="image_1" src={src5} alt="A slightly creepy man against orange background"/>
   <p class="block1" style="font-weight:normal;">
-    "In Svelte, styles defined within a block in a .svelte component are scoped by default, meaning they only apply to elements within that specific component. To define a new global CSS class that can be used across multiple components, you have a few options: "
+Nettkurs og digitale læringsplattformar har gjort utdanning meir tilgjengeleg. Studentar kan følgje førelesingar frå universitet over heile verda, men det kan òg vere utfordrande å halde motivasjonen utan fysisk oppmøte.
   </p>
   </div>
   <div class="heading1Div">
-    <h1 class="intro">Diverse</h1>
+    <h1 class="intro">Sosiale relasjonar</h1>
   </div>
   <div class="container1">
-  <img class="image_1" src={src2} alt="A slightly creepy man against orange background"/>
+  <img class="image_1" src={src6} alt="A slightly creepy man against orange background"/>
   <p class="block1" style="font-weight:normal;">
-    "In Svelte, styles defined within a block in a .svelte component are scoped by default, meaning they only apply to elements within that specific component. To define a new global CSS class that can be used across multiple components, you have a few options: "
+      Internettet har skapt nye former for fellesskap, der folk møtast gjennom spel, forum og sosiale medium. Samstundes kan overdriven bruk føre til isolasjon og mindre ansikt-til-ansikt kontakt.
   </p>
   </div>
 </div>
