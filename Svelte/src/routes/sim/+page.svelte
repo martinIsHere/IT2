@@ -38,10 +38,10 @@
     }
   };
 
-  let meters_per_screenwidth = 150E9*2;
+  let meters_per_screenwidth = 150E9*6;
   let k_meters_per_pixel = meters_per_screenwidth/canvas_width; // Fra 3.2, k i (3.1), zoom-faktoren
   let k_increment = k_meters_per_pixel*0.05;
-  let c_coordinate_at_origin = new Vector2(0,0); // Fra 3.2, c i (3.1), koordinaten på planet vist på pixel (0,0)
+  let c_coordinate_at_origin = new Vector2(k_meters_per_pixel*400,k_meters_per_pixel*300); // Fra 3.2, c i (3.1), koordinaten på planet vist på pixel (0,0)
   let mouse_drag_start = new Vector2(-1,-1);
   let user_is_dragging = false;
   let object_size_pixels = 100;
@@ -49,8 +49,7 @@
   let mb2 = 0;
   let mb3 = 0;
   let RUNNING = true;
-  // const GAMMA = 7E-11;
-  const GAMMA = 1.0;
+  const GAMMA = 7E-11;
 
   class PhysObj {
     /*
@@ -61,7 +60,7 @@
     s = new Vector2(0.0,0.0);
     v = new Vector2(0.0,0.0);
     a = new Vector2(0.0,0.0);
-    c = "black";
+    color = "red";
     constructor(m, s, v, a, c="red"){
       this.m=m;
       this.s=s;
@@ -80,7 +79,6 @@
       if (length!=0.0){
         let g_hat = vec.div(length);
         this.gm = this.gm.add(g_hat.mult(obj.m).div(length).div(length));
-        console.log(vec.length());
       }
     }
 
@@ -98,10 +96,12 @@
 
     update_velocity(time_passed=1.0){
       this.v=this.v.add(this.a.mult(time_passed));
+      return this;
     }
 
     update_position(time_passed=1.0){
       this.s=this.s.add(this.v.mult(time_passed));
+      return this;
     }
   }
   let objA = new PhysObj(1,
@@ -123,33 +123,51 @@
                  new Vector2(147E9,0), // s
                  new Vector2(0,30E3), // v
                  new Vector2(0,0), // a
-                 "rgb(0,0,255)"
+                 "blue"
                  );
   // Sol
   let SolObj = new PhysObj(199E28, // m
                  new Vector2(0,0), // s
                  new Vector2(0,0), // v
                  new Vector2(0,0), // a
-                 "rgb(255,255,0)"
+                 "yellow"
                  );
   // Mars
   let MarsObj = new PhysObj(64E22, // m
                  new Vector2(-228E9,0), // s
                  new Vector2(0,-24E3), // v
                  new Vector2(0,0), // a
-                 "rgb(200,100,0)"
+                 "orange"
                  );
   // Mercury
   let MercuryObj = new PhysObj(33E22, // m
                  new Vector2(-60E9,0), // s
                  new Vector2(0,-47E3), // v
                  new Vector2(0,0), // a
-                 "rgb(200,200,200)"
+                 "gray"
                   );
 
   let ALL_OBJECTS = [TerraObj, SolObj, MarsObj, MercuryObj];
   let dt=1/60;
   dt*=1E6;
+
+  function transform_window_to_plane(v){
+    /*
+    """
+    finner koordinaten på planet ut i fra vinduskoordinat.
+    """
+    */
+    return v.mult(k_meters_per_pixel)-c_coordinate_at_origin;
+  }
+  function transform_plane_to_window(v){
+    /*
+    """
+    finner koordinaten i vinduet ut i fra koordinaten på planet.
+    """
+    */
+    return v.add(c_coordinate_at_origin).div(k_meters_per_pixel);
+  }
+
   onMount(()=>{
     // --- setup
 
@@ -157,7 +175,7 @@
     const canvas = document.getElementById("myCanvas");
     const loggerHeading = document.getElementById("loggerHeading");
     loggerHeading.innerText=
-      objA.update_acceleration(all_objects).a.length().toString();
+      MercuryObj.a.y;
 
     // Get the 2D rendering context
     const canvas_context = canvas.getContext("2d");
@@ -174,6 +192,16 @@
 
     function update(){
       move_blue_rect();
+      let updateAccelerationFunc = (_in_obj, index, array) => {
+          let obj2 = _in_obj.update_acceleration(array);
+      }
+      ALL_OBJECTS.forEach(updateAccelerationFunc);
+
+      let updateVelAndPosFunc = (_in_obj, index, array) => {
+          _in_obj.update_velocity(dt);
+          _in_obj.update_position(dt);
+      }
+      ALL_OBJECTS.forEach(updateVelAndPosFunc);
     }
 
     function fillCircle(x, y, r, color){
@@ -183,14 +211,44 @@
       canvas_context.fill();
     }
 
+    function draw_circle_in_plane(
+                           positionVec, // pygame.Vector2
+                           radius, // uint
+                           color, // pygame.Color
+                           ){
+      /*
+      Tegn en korrekt skalert sirkel.
+      plane koordinater til vindu koordinater.
+      */
+      if (k_meters_per_pixel==0){
+        k_meters_per_pixel = 0.01;
+      }
+
+      let posVec = transform_plane_to_window(positionVec);
+      fillCircle(
+                 posVec.x, posVec.y,
+                 Math.round(radius/k_meters_per_pixel),
+                 color
+      );
+    }
+    function draw_obj_in_plane(obj){
+      draw_circle_in_plane(obj.s, k_meters_per_pixel*50, obj.color);
+    }
+
     function draw(){
-      canvas_context.fillStyle = "black";
-      canvas_context.fillRect(0, 0, 800, 600);
-      canvas_context.fillStyle = "blue";
-      canvas_context.fillRect(x, 100, 150, 150);
-      canvas_context.fillStyle = "red";
-      canvas_context.fillRect(x, 10, 150, 50);
-      fillCircle(x+150*0.5, 400, 150*0.5, "#FFFF00");
+      // canvas_context.fillStyle = "black";
+      // clears by setting whole vieable area to rgba(0,0,0,0)
+      canvas_context.clearRect(0, 0, 800, 600);
+      // canvas_context.fillStyle = "blue";
+      // canvas_context.fillRect(x, 100, 150, 150);
+      // canvas_context.fillStyle = "red";
+      // canvas_context.fillRect(x, 10, 150, 50);
+      // fillCircle(x+150*0.5, 400, 150*0.5, "#FFFF00");
+
+      draw_obj_in_plane(TerraObj);
+      draw_obj_in_plane(SolObj);
+      draw_obj_in_plane(MarsObj);
+      draw_obj_in_plane(MercuryObj);
     }
 
     function main_loop(
