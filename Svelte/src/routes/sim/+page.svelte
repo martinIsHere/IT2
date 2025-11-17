@@ -50,6 +50,7 @@
   let mb3 = 0;
   let RUNNING = true;
   const GAMMA = 7E-11;
+  const planet_radius_px = 20;
 
   class PhysObj {
     /*
@@ -151,13 +152,17 @@
   let dt=1/60;
   dt*=1E6;
 
+  function add_physObj(obj){
+    ALL_OBJECTS.push(obj);
+  }
+
   function transform_window_to_plane(v){
     /*
     """
     finner koordinaten på planet ut i fra vinduskoordinat.
     """
     */
-    return v.mult(k_meters_per_pixel)-c_coordinate_at_origin;
+    return v.mult(k_meters_per_pixel).subt(c_coordinate_at_origin);
   }
   function transform_plane_to_window(v){
     /*
@@ -173,7 +178,10 @@
 
     // Get the canvas element
     const canvas = document.getElementById("myCanvas");
+    canvas.addEventListener("click", mouse_event_handler);
     const loggerHeading = document.getElementById("loggerHeading");
+    const vektInput = document.getElementById("vekt");
+    const fargeInput = document.getElementById("farge");
     loggerHeading.innerText=
       MercuryObj.a.y;
 
@@ -190,8 +198,21 @@
       }
     }
 
-    function update(){
-      move_blue_rect();
+    function mouse_event_handler(event){
+      let mengdeSolmasser = vektInput.value;
+      let farge = fargeInput.value;
+      if(mengdeSolmasser > 0) {
+        let temp_obj = new PhysObj(mengdeSolmasser*199E28, 
+          transform_window_to_plane(new Vector2(event.offsetX, event.offsetY)),
+          new Vector2(0,0),
+          new Vector2(0,0),
+          farge
+          );
+        add_physObj(temp_obj);
+      }
+    }
+
+    function update_all_objects_attributes(){
       let updateAccelerationFunc = (_in_obj, index, array) => {
           let obj2 = _in_obj.update_acceleration(array);
       }
@@ -202,6 +223,11 @@
           _in_obj.update_position(dt);
       }
       ALL_OBJECTS.forEach(updateVelAndPosFunc);
+    }
+
+    function update(){
+      //move_blue_rect();
+      update_all_objects_attributes();
     }
 
     function fillCircle(x, y, r, color){
@@ -232,7 +258,14 @@
       );
     }
     function draw_obj_in_plane(obj){
-      draw_circle_in_plane(obj.s, k_meters_per_pixel*50, obj.color);
+      draw_circle_in_plane(obj.s, k_meters_per_pixel*planet_radius_px, obj.color);
+    }
+
+    function draw_all_objects(){
+      function temp_func(obj){
+        draw_obj_in_plane(obj);
+      }
+      ALL_OBJECTS.forEach(temp_func);
     }
 
     function draw(){
@@ -245,10 +278,11 @@
       // canvas_context.fillRect(x, 10, 150, 50);
       // fillCircle(x+150*0.5, 400, 150*0.5, "#FFFF00");
 
-      draw_obj_in_plane(TerraObj);
-      draw_obj_in_plane(SolObj);
-      draw_obj_in_plane(MarsObj);
-      draw_obj_in_plane(MercuryObj);
+      // draw_obj_in_plane(TerraObj);
+      // draw_obj_in_plane(SolObj);
+      // draw_obj_in_plane(MarsObj);
+      // draw_obj_in_plane(MercuryObj);
+      draw_all_objects();
     }
 
     function main_loop(
@@ -269,4 +303,8 @@
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
     margin-left: auto;
     display: block;"></canvas>
+<label for="fname" style="font-weight:normal;">Vekt:</label>
+  <input type="text" id="vekt" name="fname"><br><br>
+  <label for="lname" style="font-weight:normal;">Farge:</label>
+  <input type="text" id="farge" name="lname"><br><br>
 <h1 id="loggerHeading" style="font-family: Arial, Helvetica, sans-serif;">&ltNAN&gt</h1>
