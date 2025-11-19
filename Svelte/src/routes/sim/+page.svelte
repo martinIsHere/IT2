@@ -1,4 +1,10 @@
 
+<style>
+.centering_container {
+  text-align: center;
+}
+</style>
+
 <script>
   import { onMount } from 'svelte';
   const canvas_width=800;
@@ -173,6 +179,8 @@
     return v.add(c_coordinate_at_origin).div(k_meters_per_pixel);
   }
 
+  let set_new_view_width = () => {}
+
   onMount(()=>{
     // --- setup
 
@@ -182,6 +190,7 @@
     const loggerHeading = document.getElementById("loggerHeading");
     const vektInput = document.getElementById("vekt");
     const fargeInput = document.getElementById("farge");
+    const meters_per_screenwidth_input = document.getElementById("meters_per_screenwidth_button");
     loggerHeading.innerText=
       MercuryObj.a.y;
 
@@ -189,6 +198,13 @@
     const canvas_context = canvas.getContext("2d");
 
     let x = 0.0;
+
+    set_new_view_width = () => {
+      k_meters_per_pixel = meters_per_screenwidth_input.value*150E9/canvas_width;
+      c_coordinate_at_origin.x = k_meters_per_pixel*400;
+      c_coordinate_at_origin.y = k_meters_per_pixel*300; // Fra 3.2, c i (3.1), koordinaten på planet vist på pixel (0,0)
+      console.log(k_meters_per_pixel);
+    };
 
     // --- main-loop
     function move_blue_rect(){
@@ -303,8 +319,18 @@
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
     margin-left: auto;
     display: block;"></canvas>
-<label for="fname" style="font-weight:normal;">Vekt:</label>
-  <input type="text" id="vekt" name="fname"><br><br>
-  <label for="lname" style="font-weight:normal;">Farge:</label>
-  <input type="text" id="farge" name="lname"><br><br>
+<label for="vekt" style="font-weight:normal;">Vekt:</label>
+  <input type="text" id="vekt" name="vekt"><br><br>
+  <label for="farge" style="font-weight:normal;">Farge:</label>
+  <input type="text" id="farge" name="farge"><br><br>
 <h1 id="loggerHeading" style="font-family: Arial, Helvetica, sans-serif;">&ltNAN&gt</h1>
+<label for="meters_per_screenwidth" style="font-weight:normal;">150E9*__ [m]:</label>
+  <input type="text" id="meters_per_screenwidth_button" name="meters_per_screenwidth"><br><br>
+<div class="centering_container">
+    <button class="button_confirm" on:click={set_new_view_width}>Bekreft</button><br>
+</div>
+
+
+
+<!-- paywall -->
+<!-- scrollpage count https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo -->
