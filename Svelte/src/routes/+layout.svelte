@@ -64,7 +64,7 @@
     left:0px;
     width:100vw;
     font-size: 14pt;
-    z-index: 1000;
+    z-index: 100;
   }
 
 

@@ -23,7 +23,7 @@
 
   .bare {
     margin: 0;
-    padding: 5ch;
+    padding: 0;
   }
 
   .absCenter {
@@ -38,9 +38,9 @@
     width: 60vw;
     height: 60vh;
     */
-    width: 60ch;
-    height: 60ch;
-    max-width: 60vw;
+    width: 90ch;
+    height: 80ch;
+    max-width: 70vw;
     max-height: 90vh;
   }
 
@@ -63,6 +63,7 @@
 
   .button_confirm {
     padding: 8px 25px;
+    margin: 8ch 0ch;
     text-align: center;
     background-color: #00000060; /* semi-transparent white */
     border: 1px solid #00000080;
@@ -81,7 +82,7 @@
   }
 
   .center_static {
-    margin: auto 0;
+    padding: auto 0;
     text-align: center;
   }
 
@@ -96,9 +97,9 @@
 </style>
 
 {#if !popup_is_hidden}
-<div class="absCenter">
-  <div transition:fly={{x: -10, y:10, duration:1000}} class="popup_size whiteBG bare float noOverflow scroll_box" style="z-index: 90000; border-radius: 1%;">
-    <div class="noInherit" style="z-index:90001;">
+<div class="absCenter" style="z-index: 90002">
+  <div transition:fly={{x: -10, y:10, duration:1000}} class="popup_size whiteBG bare float noOverflow scroll_box" style="z-index: 90001; border-radius: 1%;">
+    <div class="noInherit" style="z-index:90000;">
         <div class="noOverflow" style="margin-bottom:8ch;">
           <h2 class="center_static linearBG">
             <u>Internettets historie og mulighetene det åpnet</u>
