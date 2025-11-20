@@ -49,6 +49,7 @@
   width: 50%;
   min-width: 30ch;
   max-width: 75ch;
+  background-color: #00000080;
 }
 
 .heading1Div {
@@ -56,6 +57,10 @@
   display: flex;
   position: relative;
   justify-content: center;
+}
+
+.darken {
+  background: linear-gradient(to bottom, #00000000, #00000040, #00000000);
 }
 h1{
   position: relative;
@@ -79,7 +84,7 @@ h1::after{
 
 <div class="default_text_banner intro_banner2">
   <div class="heading1Div">
-    <h1 class="intro">Kommunikasjon</h1>
+    <h1 class="intro darken">Kommunikasjon</h1>
   </div>
   <div class="container1">
   <img class="image_1" src={src} alt="A slightly creepy man against orange background"/>
@@ -88,7 +93,7 @@ h1::after{
     </p>
   </div>
   <div class="heading1Div">
-    <h1 class="intro">Kunnskap og informasjon</h1>
+    <h1 class="intro darken">Kunnskap og informasjon</h1>
   </div>
   <div class="container1">
   <img class="image_1" src={src} alt="A slightly creepy man against orange background"/>
@@ -97,7 +102,7 @@ Tidlegare måtte ein til biblioteket for å finne informasjon, men no ligg det m
   </p>
   </div>
   <div class="heading1Div">
-    <h1 class="intro">Handel og økonomi</h1>
+    <h1 class="intro darken">Handel og økonomi</h1>
   </div>
   <div class="container1">
   <img class="image_1" src={src2} alt="A slightly creepy man against orange background"/>
@@ -106,7 +111,7 @@ Netthandel har endra måten vi kjøper varer og tenester på. Mange butikkar har
   </p>
   </div>
   <div class="heading1Div">
-    <h1 class="intro">Arbeidsliv</h1>
+    <h1 class="intro darken">Arbeidsliv</h1>
   </div>
   <div class="container1">
   <img class="image_1" src={src4} alt="A slightly creepy man against orange background"/>
@@ -115,7 +120,7 @@ Fleire yrke krev no digital kompetanse, og mange kan arbeide heimanfrå takka ve
   </p>
   </div>
   <div class="heading1Div">
-    <h1 class="intro">Utdanning</h1>
+    <h1 class="intro darken">Utdanning</h1>
   </div>
   <div class="container1">
   <img class="image_1" src={src5} alt="A slightly creepy man against orange background"/>
@@ -124,7 +129,7 @@ Nettkurs og digitale læringsplattformar har gjort utdanning meir tilgjengeleg. 
   </p>
   </div>
   <div class="heading1Div">
-    <h1 class="intro">Sosiale relasjonar</h1>
+    <h1 class="intro darken">Sosiale relasjonar</h1>
   </div>
   <div class="container1">
   <img class="image_1" src={src6} alt="A slightly creepy man against orange background"/>

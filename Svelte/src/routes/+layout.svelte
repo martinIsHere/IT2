@@ -77,14 +77,23 @@
     padding: 15px 25px;
     border-radius: 25px;
     text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  .toolbar_link:hover {
+    background-color: #222222;
   }
   :global(h1){
     font-size: 62pt;
     font-weight: lighter;
   }
+  :global(h2){
+    font-size: 42pt;
+    font-weight: lighter;
+  }
   :global(p){
     font-size: 24pt;
     margin: 1pt 10%;
+    text-align: justify;
   }
 </style>
 

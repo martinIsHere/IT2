@@ -1,8 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
-
-
-
   let fornavn="";
   let etternavn="";
   let nameConfirmed = false;
@@ -15,8 +11,6 @@
     nameConfirmed=false;
   }
   
-  onMount(()=>{
-  })
 </script>
 <style>
 :global(.intro) {
