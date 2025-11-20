@@ -86,10 +86,6 @@
     font-size: 24pt;
     margin: 1pt 10%;
   }
-  :global(section){
-    margin: 1pt 10%;
-  }
-
 </style>
 
 

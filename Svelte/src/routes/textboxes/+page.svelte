@@ -7,9 +7,6 @@
 	import src6 from '$lib/assets/smiling_man6.png';
 </script>
 <style>
-section {
-  margin: 1pt 10%;
-}
 .container1 {
   display: flex;
   justify-content: center; /* space between text & image */
@@ -31,14 +28,10 @@ section {
   position:relative;
   width: 100vw;
   padding: 10px;
-  background: linear-gradient(to bottom, #000000FF, #000000BD);
 }
 
 .intro_banner2 {
-  position:relative;
-  width: 100vw;
-  padding: 10px;
-  background: linear-gradient(to bottom, #00000000, #000000FF);
+  background: linear-gradient(to bottom, #00000000, #000000FF,#000000FF);
 }
 
 .black_banner {
@@ -79,7 +72,12 @@ h1::after{
   left: 0;
 }
 </style>
-<div class="intro_banner2">
+
+<div>
+  
+</div>
+
+<div class="default_text_banner intro_banner2">
   <div class="heading1Div">
     <h1 class="intro">Kommunikasjon</h1>
   </div>
@@ -89,8 +87,6 @@ h1::after{
     Internettet har revolusjonert måten folk kommuniserer på. I dag kan vi sende meldingar, e-post og videochattar med menneske over heile verda på sekund. Avstanden mellom folk har minka, og mange held kontakt med vener og familie gjennom sosiale medium.
     </p>
   </div>
-</div>
-<div class="black_banner">
   <div class="heading1Div">
     <h1 class="intro">Kunnskap og informasjon</h1>
   </div>
