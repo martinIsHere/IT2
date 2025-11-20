@@ -63,18 +63,6 @@ let toggle_popup = () => {
   }
 
   .noInherit {
-    /*
-    width: initial;
-    height: initial;
-    background-color: initial;
-    box-shadow: initial;
-    position: initial;
-    left: initial;
-    top: inital;
-    transform: initial;
-    margin: initial;
-    padding: initial;
-    */
     all: initial;
   }
 
