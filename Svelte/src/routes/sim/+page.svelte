@@ -1,14 +1,27 @@
 
 <style>
-.centering_container {
-  text-align: center;
-}
+  .centering_container {
+    text-align: center;
+  }
+  .button_confirm {
+    padding: 8px 25px;
+    text-align: center;
+    background-color: #ffffff20; /* semi-transparent white */
+    border: 1px solid #ffffff50;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  .button_confirm:hover {
+    background-color: #ffffff40;
+  }
+  }
 </style>
 
 <script>
   import { onMount } from 'svelte';
-  const canvas_width=800;
-  const canvas_height=600;
+  const canvas_width=1200;
+  const canvas_height=800;
 
   class Vector2 {
     constructor(_in_x=0.0,_in_y=0.0){
@@ -46,8 +59,13 @@
 
   let meters_per_screenwidth = 150E9*6;
   let k_meters_per_pixel = meters_per_screenwidth/canvas_width; // Fra 3.2, k i (3.1), zoom-faktoren
-  let k_increment = k_meters_per_pixel*0.05;
-  let c_coordinate_at_origin = new Vector2(k_meters_per_pixel*400,k_meters_per_pixel*300); // Fra 3.2, c i (3.1), koordinaten på planet vist på pixel (0,0)
+  const k_increment = k_meters_per_pixel*0.05;
+  let c_coordinate_at_origin = new Vector2(0.0,0.0); 
+  function generate_scaled_c(){// Fra 3.2, c i (3.1), koordinaten på planet vist på pixel (0,0)
+    c_coordinate_at_origin.x = k_meters_per_pixel*canvas_width*0.5;
+    c_coordinate_at_origin.y = k_meters_per_pixel*canvas_height*0.5;
+  }
+  generate_scaled_c();
   let mouse_drag_start = new Vector2(-1,-1);
   let user_is_dragging = false;
   let object_size_pixels = 100;
@@ -201,8 +219,7 @@
 
     set_new_view_width = () => {
       k_meters_per_pixel = meters_per_screenwidth_input.value*150E9/canvas_width;
-      c_coordinate_at_origin.x = k_meters_per_pixel*400;
-      c_coordinate_at_origin.y = k_meters_per_pixel*300; // Fra 3.2, c i (3.1), koordinaten på planet vist på pixel (0,0)
+      generate_scaled_c();
       console.log(k_meters_per_pixel);
     };
 
@@ -287,7 +304,7 @@
     function draw(){
       // canvas_context.fillStyle = "black";
       // clears by setting whole vieable area to rgba(0,0,0,0)
-      canvas_context.clearRect(0, 0, 800, 600);
+      canvas_context.clearRect(0, 0, canvas_width, canvas_height);
       // canvas_context.fillStyle = "blue";
       // canvas_context.fillRect(x, 100, 150, 150);
       // canvas_context.fillStyle = "red";
@@ -316,9 +333,11 @@
     requestAnimationFrame(main_loop);
   })
 </script>
+
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
     margin-left: auto;
-    display: block;"></canvas>
+display: block; background: radial-gradient(#000000FF, #00000000, #00000000)"></canvas>
+<div class="centering_container">
 <label for="vekt" style="font-weight:normal;">Vekt:</label>
   <input type="text" id="vekt" name="vekt"><br><br>
   <label for="farge" style="font-weight:normal;">Farge:</label>
@@ -326,6 +345,7 @@
 <h1 id="loggerHeading" style="font-family: Arial, Helvetica, sans-serif;">&ltNAN&gt</h1>
 <label for="meters_per_screenwidth" style="font-weight:normal;">150E9*__ [m]:</label>
   <input type="text" id="meters_per_screenwidth_button" name="meters_per_screenwidth"><br><br>
+</div>
 <div class="centering_container">
     <button class="button_confirm" on:click={set_new_view_width}>Bekreft</button><br>
 </div>
