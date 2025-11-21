@@ -2,6 +2,17 @@
 <style>
   .centering_container {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .radialGradientBG {
+    background: radial-gradient(closest-side, #000000FF, #00000000);
+  }
+  .centering_element {
+    text-align: center;
+    display: inline;
+    padding: 10ch;
   }
   .button_confirm {
     padding: 8px 25px;
@@ -205,12 +216,9 @@
     // Get the canvas element
     const canvas = document.getElementById("myCanvas");
     canvas.addEventListener("click", mouse_event_handler);
-    const loggerHeading = document.getElementById("loggerHeading");
     const vektInput = document.getElementById("vekt");
     const fargeInput = document.getElementById("farge");
     const meters_per_screenwidth_input = document.getElementById("meters_per_screenwidth_button");
-    loggerHeading.innerText=
-      MercuryObj.a.y;
 
     // Get the 2D rendering context
     const canvas_context = canvas.getContext("2d");
@@ -322,7 +330,6 @@
       timestamp // int
     ){
       // debug
-      // loggerHeading.innerText=timestamp;
 
       update();
       draw();
@@ -337,17 +344,20 @@
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
     margin-left: auto;
 display: block; background: radial-gradient(#000000FF, #00000000, #00000000)"></canvas>
-<div class="centering_container">
-<label for="vekt" style="font-weight:normal;">Vekt:</label>
-  <input type="text" id="vekt" name="vekt"><br><br>
-  <label for="farge" style="font-weight:normal;">Farge:</label>
-  <input type="text" id="farge" name="farge"><br><br>
-<h1 id="loggerHeading" style="font-family: Arial, Helvetica, sans-serif;">&ltNAN&gt</h1>
-<label for="meters_per_screenwidth" style="font-weight:normal;">150E9*__ [m]:</label>
-  <input type="text" id="meters_per_screenwidth_button" name="meters_per_screenwidth"><br><br>
-</div>
-<div class="centering_container">
-    <button class="button_confirm" on:click={set_new_view_width}>Bekreft</button><br>
+<div class="centering_container radialGradientBG">
+  <div class="centering_element">
+    <label for="vekt" style="font-weight:normal;">Vekt:</label>
+      <input type="text" id="vekt" name="vekt"><br><br>
+      <label for="farge" style="font-weight:normal;">Farge:</label>
+      <input type="text" id="farge" name="farge"><br><br>
+  </div>
+  <div class="centering_element">
+    <label for="meters_per_screenwidth" style="font-weight:normal;">150E9*__ [m]:</label>
+      <input type="text" id="meters_per_screenwidth_button" name="meters_per_screenwidth"><br><br>
+  </div>
+  <div class="centering_element">
+        <button class="button_confirm" on:click={set_new_view_width}>Bekreft</button><br>
+  </div>
 </div>
 
 

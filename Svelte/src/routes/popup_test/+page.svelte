@@ -88,7 +88,19 @@
   }
 
   .linearBG {
-    background: linear-gradient(to bottom, #00000000, #0000BB40, #00000000);
+    background: linear-gradient(to bottom, #00000000, #FF00FF40, #00000000);
+  }
+
+  .whiteBG {
+    background-color: white;
+  }
+
+  .wavyBG {
+    background: linear-gradient(to bottom, #FFAAAA, #AAFFAA, #AAAAFF);
+  }
+
+  .clean_border {
+    border: 2px solid;
   }
 
   .scroll_box {
@@ -100,13 +112,13 @@
 {#if !popup_is_hidden}
 <div transition:fly={{duration:1000}} style="position: fixed; inset: 0; left: 0; top: 0; width: 100vw; height: 100dvh; background: radial-gradient(#000000FF, #00000000); z-index: 8999"></div>
 <div class="absCenter" style="z-index: 9002">
-  <div transition:fly={{x: -10, y:10, duration:100}} class="popup_size whiteBG bare float noOverflow scroll_box" style="z-index: 90001; border-radius: 1%;">
+  <div transition:fly={{x: -10, y:10, duration:100}} class="popup_size whiteBG bare float noOverflow scroll_box wavyBG" style="z-index: 90001; border-radius: 1%;">
     <div class="noInherit" style="z-index:9000;">
         <div class="noOverflow" style="margin-bottom:8ch;">
-          <h2 class="center_static linearBG">
+          <h2 class="center_static" style="color: #AAFFAA;">
             <u>Pop-up vinduer</u>
           </h2>
-          <p class="center_static">
+          <p class="center_static clean_border whiteBG">
             Pop-up-vinduer dukket opp på slutten av 1990-tallet som en metode for annonsering på nettet. De ble populære fordi de kunne vises utenfor selve nettsiden og dermed fange brukerens oppmerksomhet, men ble raskt upopulære på grunn av hvor forstyrrende de var. Dette førte til utviklingen av pop-up-blokkere og strengere nettleserregler. Cookies, derimot, ble introdusert av Netscape i 1994 som en løsning for å lagre små informasjonsbiter på brukerens maskin, slik at nettsteder kunne huske innstillinger, handlekurver og innloggingsstatus. Over tid ble cookies også brukt til sporing og målrettet reklame, noe som utløste debatter om personvern og førte til reguleringer som GDPR og strengere kontroll over tredjeparts-cookies.
           </p>
         </div>
