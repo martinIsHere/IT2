@@ -2,6 +2,7 @@
 <script>
   import { onMount } from 'svelte';
   import { fly } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
 
   let popup_is_hidden = true;
 
@@ -97,19 +98,16 @@
 </style>
 
 {#if !popup_is_hidden}
+<div transition:fly={{duration:1000}} style="position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; background: radial-gradient(#000000FF, #00000000);"></div>
 <div class="absCenter" style="z-index: 90002">
   <div transition:fly={{x: -10, y:10, duration:1000}} class="popup_size whiteBG bare float noOverflow scroll_box" style="z-index: 90001; border-radius: 1%;">
     <div class="noInherit" style="z-index:90000;">
         <div class="noOverflow" style="margin-bottom:8ch;">
           <h2 class="center_static linearBG">
-            <u>Internettets historie og mulighetene det åpnet</u>
+            <u>Pop-up vinduer</u>
           </h2>
           <p class="center_static">
-            Internett startet på slutten av 1960-tallet som ARPANET, et amerikansk forskningsprosjekt som skulle koble sammen datamaskiner over store avstander. På 1970- og tidlig 1980-tallet utviklet forskere TCP/IP, standarden som gjorde det mulig for ulike nettverk å kommunisere. Da TCP/IP ble tatt i bruk i 1983, regnes dette som starten på det moderne internettet.
-
-            Et viktig gjennombrudd kom i 1989 da Tim Berners-Lee utviklet World Wide Web, med nettsider, hyperlenker og den første nettleseren. Dette gjorde internett tilgjengelig for vanlige brukere og endret det fra et forskningsverktøy til en global plattform.
-
-            Etter hvert som internett vokste gjennom 1990- og 2000-tallet, åpnet det enorme muligheter: rask kommunikasjon via e-post og meldinger, tilgang til informasjon fra hvor som helst, netthandel og nettbank, sosiale medier, samarbeid på tvers av landegrenser, strømming av musikk og film, og nye teknologier som skytjenester og mobil internettbruk. I dag er internett en nøkkelressurs for utdanning, arbeid, forskning og hverdagsliv for milliarder av mennesker.
+            Pop-up-vinduer dukket opp på slutten av 1990-tallet som en metode for annonsering på nettet. De ble populære fordi de kunne vises utenfor selve nettsiden og dermed fange brukerens oppmerksomhet, men ble raskt upopulære på grunn av hvor forstyrrende de var. Dette førte til utviklingen av pop-up-blokkere og strengere nettleserregler. Cookies, derimot, ble introdusert av Netscape i 1994 som en løsning for å lagre små informasjonsbiter på brukerens maskin, slik at nettsteder kunne huske innstillinger, handlekurver og innloggingsstatus. Over tid ble cookies også brukt til sporing og målrettet reklame, noe som utløste debatter om personvern og førte til reguleringer som GDPR og strengere kontroll over tredjeparts-cookies.
           </p>
         </div>
         <div class="center_static" >
