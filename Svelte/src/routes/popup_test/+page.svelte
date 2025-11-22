@@ -110,7 +110,7 @@
 </style>
 
 {#if !popup_is_hidden}
-<div transition:fly={{duration:1000}} style="position: fixed; inset: 0; left: 0; top: 0; width: 100vw; height: 100dvh; background: radial-gradient(#000000FF, #00000000); z-index: 8999"></div>
+<div transition:fly={{duration:1000}} style="position: fixed; inset: 0; left: 0; top: 0; width: 100vw; min-height: 100dvh; background: radial-gradient(#000000FF, #00000000); z-index: 8999"></div>
 <div class="absCenter" style="z-index: 9002">
   <div transition:fly={{x: -10, y:10, duration:100}} class="popup_size whiteBG bare float noOverflow scroll_box wavyBG" style="z-index: 90001; border-radius: 1%;">
     <div class="noInherit" style="z-index:9000;">

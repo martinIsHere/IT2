@@ -41,6 +41,7 @@
   }
 
   .star_backdrop {
+    position:relative; /* seems to break z-indexing*/
     background-image: url("$lib/assets/Stars.svg");
     margin: 0;
     padding: 0;
@@ -66,9 +67,17 @@
     font-size: 14pt;
     z-index: 100;
   }
+  .slidecontainer {
+    margin: auto auto;
+  }
+  .slider {
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
 
 
   .toolbar_link {
+    position: relative;
     color: #FFFFFF;
     background-color: #b54a7280;
     font-weight: bold;
@@ -78,9 +87,11 @@
     border-radius: 25px;
     text-decoration: none;
     transition: background-color 0.3s;
+    transition: scale 0.4s;
   }
   .toolbar_link:hover {
     background-color: #222222;
+    scale: 1.1;
   }
   :global(h1){
     font-size: 62pt;
@@ -95,6 +106,34 @@
     margin: 1pt 10%;
     text-align: justify;
   }
+  .rainbow-text {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+    background: linear-gradient(
+      to right,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet
+    );
+    -webkit-background-clip: text; /* Chrome/Safari */
+    background-clip: text;         /* Standard */
+    color: transparent;            /* Hide original text color */
+
+    background-size: 400% auto;
+    animation: rainbow 10s linear infinite;
+  }
+
+
+  @keyframes rainbow {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
+  }
 </style>
 
 
@@ -104,12 +143,14 @@
 
 <div class="toolbar">
   <a class="toolbar_link" href="/">Hjem</a>
-  <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
-  <a class="toolbar_link" href="/sim">Sim</a>
-  <a class="toolbar_link" href="/popup_test">Pop-up test</a>
-  <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
-  <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
-  <a class="toolbar_link" href="/textboxes">Tekstbokser</a>
+  <a class="toolbar_link" href="/textboxes">Kort gjennomgang</a>
+  <a class="toolbar_link" href="/popup_and_sim">Simulering av planeter</a>
+  <div style="margin: auto auto;">
+    <h3 class="rainbow-text">Bakgrunnsslider</h3>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
+  </div>
 </div>
 
 <div class="content" style="margin:0;padding:0;">

@@ -1,38 +1,28 @@
-
-<style>
-  .centering_container {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .radialGradientBG {
-    background: radial-gradient(closest-side, #000000FF, #00000000);
-  }
-  .centering_element {
-    text-align: center;
-    display: inline;
-    padding: 10ch;
-  }
-  .button_confirm {
-    padding: 8px 25px;
-    text-align: center;
-    background-color: #ffffff20; /* semi-transparent white */
-    border: 1px solid #ffffff50;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .button_confirm:hover {
-    background-color: #ffffff40;
-  }
-</style>
-
 <script>
   import { onMount } from 'svelte';
-  const canvas_width=1200;
-  const canvas_height=800;
+
+  //--popup------------------------
+  import { fly } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
+
+  let popup_is_hidden = true;
+
+  let toggle_popup = () => {
+    if (popup_is_hidden) {
+      popup_is_hidden = false;
+    } else {
+      popup_is_hidden = true;
+    }
+  }
+
+  const popup_ventetid_sekund = 4;
+
+  setTimeout(toggle_popup, popup_ventetid_sekund*1000);
+
+  //--popup-----------------------
+
+  const canvas_width=1600;
+  const canvas_height=1000;
 
   class Vector2 {
     constructor(_in_x=0.0,_in_y=0.0){
@@ -341,26 +331,175 @@
   })
 </script>
 
+<style>
+
+  .centering_container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .radialGradientBG {
+    background: radial-gradient(closest-side, #000000FF, #00000000);
+  }
+  .centering_element {
+    text-align: center;
+    display: inline;
+    padding: 10ch;
+  }
+
+  .bare {
+    margin: 0;
+    padding: 0;
+  }
+
+  .absCenter {
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+  }
+
+  .popup_size {
+    /*
+    width: 60vw;
+    height: 60vh;
+    */
+    width: 90ch;
+    height: 80ch;
+    max-width: 70vw;
+    max-height: 90vh;
+  }
+
+  .whiteBG {
+    background-color: white;
+  }
+
+  .float {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.9);
+    transition: box-shadow 0.2s;
+  }
+
+  .float:hover {
+    box-shadow: 0 10px 18px rgba(80,80,80,0.9);
+  }
+
+  .enlarge_anim {
+    transition: scale 0.4s;
+  }
+
+  .enlarge_anim:hover {
+    scale:1.1;
+  }
+  .noOverflow {
+    overflow: hidden;
+  }
+
+  .button_confirm1 {
+    padding: 8px 25px;
+    margin: 8ch 0ch;
+    text-align: center;
+    background-color: #00000060; /* semi-transparent white */
+    border: 1px solid #00000080;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    scale: 2;
+    transition: background-color 0.3s;
+  }
+  .button_confirm1:hover {
+    background-color: #FF000040;
+  }
+
+  .button_confirm2 {
+    padding: 8px 25px;
+    text-align: center;
+    background-color: #00000060; /* semi-transparent white */
+    border: 1px solid #00000080;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .button_confirm2:hover {
+    background-color: #FF000040;
+  }
+
+  .noInherit {
+    all: initial;
+  }
+
+  .center_static {
+    padding: auto 0;
+    text-align: center;
+  }
+
+  .align_left_2padding {
+    padding: 2ch;
+    text-align: left;
+  }
+
+  .linearBG {
+    background: linear-gradient(to bottom, #00000000, #FF00FF40, #00000000);
+  }
+
+  .whiteBG {
+    background-color: white;
+  }
+
+  .wavyBG {
+    background: linear-gradient(to bottom, #FFAAAA, #AAFFAA, #AAAAFF);
+  }
+
+  .clean_border {
+    border: 2px solid;
+  }
+
+  .scroll_box {
+    overflow-y: auto;
+  }
+  
+</style>
+
+<h3 class="whiteBG float enlarge_anim" style="color: black; position:absolute; padding: 2ch; left:2ch; top: 2ch;">Fyll ut attributt-felt, og trykk<br> for å legge til ny planet!</h3>
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
     margin-left: auto;
 display: block; background: radial-gradient(#000000FF, #00000000, #00000000)"></canvas>
 <div class="centering_container radialGradientBG">
   <div class="centering_element">
-    <label for="vekt" style="font-weight:normal;">Vekt:</label>
-      <input type="text" id="vekt" name="vekt"><br><br>
-      <label for="farge" style="font-weight:normal;">Farge:</label>
-      <input type="text" id="farge" name="farge"><br><br>
+    <h3>Attributter til ny planet</h3>
+    <label for="vekt" style="font-weight:normal;">Vekt (mengde solmasser):</label>
+    <input type="text" class="float enlarge_anim" id="vekt" name="vekt"><br><br>
+    <label for="farge" style="font-weight:normal;">Farge (F.eks. "purple" / "#FF00FF"):</label>
+    <input type="text" class="float enlarge_anim" id="farge" name="farge"><br><br>
   </div>
   <div class="centering_element">
-    <label for="meters_per_screenwidth" style="font-weight:normal;">150E9*__ [m]:</label>
-      <input type="text" id="meters_per_screenwidth_button" name="meters_per_screenwidth"><br><br>
-  </div>
-  <div class="centering_element">
-        <button class="button_confirm" on:click={set_new_view_width}>Bekreft</button><br>
+    <h3>Zoom</h3>
+    <label for="meters_per_screenwidth" style="font-weight:normal;">Meter per bredde<br> (multiplisert med 150E9, standard=6):</label>
+    <input type="text" class="float enlarge_anim" id="meters_per_screenwidth_button" name="meters_per_screenwidth"><br><br>
+    <button class="button_confirm2" on:click={set_new_view_width}>Bekreft</button><br>
   </div>
 </div>
 
-
-
-<!-- paywall -->
-<!-- scrollpage count https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo -->
+<svelte:portal target="body">
+{#if !popup_is_hidden}
+<div transition:fade={{duration:1000}} style="position: fixed; inset: 0; left: 0; top: 0; width: 100vw; height: 100dvh; background: radial-gradient(#000000FF, #00000000); z-index: 9000"></div>
+<div class="absCenter" style="z-index: 9001">
+  <div transition:fly={{x: -10, y:10, duration:1000}} class="popup_size whiteBG bare float noOverflow scroll_box wavyBG" style="z-index: 9002; border-radius: 1%;">
+    <div class="noInherit" style="z-index:9003;">
+      <div class="noOverflow" style="margin-bottom:8ch;">
+        <h2 class="center_static" style="color: #AAFFAA;">
+          <u>Pop-up vinduer</u>
+        </h2>
+        <p class="align_left_2padding clean_border whiteBG">
+          Pop-up-vinduer dukket opp på slutten av 1990-tallet som en metode for annonsering på nettet. De ble populære fordi de kunne vises utenfor selve nettsiden og dermed fange brukerens oppmerksomhet, men ble raskt upopulære på grunn av hvor forstyrrende de var. Dette førte til utviklingen av pop-up-blokkere og strengere nettleserregler. Cookies, derimot, ble introdusert av Netscape i 1994 som en løsning for å lagre små informasjonsbiter på brukerens maskin, slik at nettsteder kunne huske innstillinger, handlekurver og innloggingsstatus. Over tid ble cookies også brukt til sporing og målrettet reklame, noe som utløste debatter om personvern og førte til reguleringer som GDPR og strengere kontroll over tredjeparts-cookies.
+        </p>
+      </div>
+      <div class="center_static" >
+        <button on:click={toggle_popup} class="button_confirm1"> OK </button>
+      </div>
+    </div>
+  </div>
+</div>
+{/if}
+</svelte:portal>
