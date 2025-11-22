@@ -4,20 +4,35 @@
 
   let BG_color = "#000000bf"
 
-  const def_color = [0x111188, 0xFF3366, 0x002200];
+  const def_color = [0x0053FF, 0x53FF00, 0xFF0053];
   let slider_value = 0;
+  function reverse(val) {
+    /*
+      Når fargen overskrider 255 så går den tilbake:
+          For høg verdi, vil retning skiftes mot null
+          Antar at 255-(val%256) >= 0
+      [INN] : 150 -> 200 -> 255 -> 311 -> 361
+      [UT]  : 150 -> 200 -> 255 -> 200 -> 150
+      
+      Fjerner "hopp" og beholder fargevariasjon
+    */
+    if(val>255) {
+      return 255-(val%256);
+    }
+    return val;
+  }
   let get_color = (index) => {
     let color_red_channel = def_color[index] & 0xFF0000;
     color_red_channel/=16**4;
     color_red_channel += slider_value;
-    color_red_channel %= 256;
+    color_red_channel = reverse(color_red_channel);
     let color_green_channel = def_color[index] & 0x00FF00;
     color_green_channel/=16**2;
     color_green_channel += slider_value;
-    color_green_channel %= 256;
+    color_green_channel = reverse(color_green_channel);
     let color_blue_channel = def_color[index] & 0x0000FF;
     color_blue_channel += slider_value;
-    color_blue_channel %= 256;
+    color_blue_channel = reverse(color_blue_channel);
     const digitsPerChannel = 2;
     return "#" + color_red_channel.toString(16).padStart(digitsPerChannel, '0')
                + color_green_channel.toString(16).padStart(digitsPerChannel, '0')
