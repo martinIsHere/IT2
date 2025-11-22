@@ -481,7 +481,6 @@ display: block; background: radial-gradient(#000000FF, #00000000, #00000000)"></
   </div>
 </div>
 
-<svelte:portal target="body">
 {#if !popup_is_hidden}
 <div transition:fade={{duration:1000}} style="position: fixed; inset: 0; left: 0; top: 0; width: 100vw; height: 100dvh; background: radial-gradient(#000000FF, #00000000); z-index: 9000"></div>
 <div class="absCenter" style="z-index: 9001">
@@ -502,4 +501,3 @@ display: block; background: radial-gradient(#000000FF, #00000000, #00000000)"></
   </div>
 </div>
 {/if}
-</svelte:portal>
