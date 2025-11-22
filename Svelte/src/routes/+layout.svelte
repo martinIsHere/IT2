@@ -41,7 +41,6 @@
   }
 
   .star_backdrop {
-    position:relative; /* seems to break z-indexing*/
     background-image: url("$lib/assets/Stars.svg");
     margin: 0;
     padding: 0;

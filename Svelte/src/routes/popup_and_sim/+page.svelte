@@ -6,14 +6,10 @@
   import { fade } from 'svelte/transition';
 
   let popup_is_hidden = true;
+  let show_tooltip = true;
 
-  let toggle_popup = () => {
-    if (popup_is_hidden) {
-      popup_is_hidden = false;
-    } else {
-      popup_is_hidden = true;
-    }
-  }
+  let toggle_popup = () => { popup_is_hidden=!popup_is_hidden; }
+  let toggle_tooltip = () => { show_tooltip=!show_tooltip; }
 
   const popup_ventetid_sekund = 4;
 
@@ -348,6 +344,10 @@
     padding: 10ch;
   }
 
+  .no_top_padding {
+    padding-top:0;
+  }
+
   .bare {
     margin: 0;
     padding: 0;
@@ -461,19 +461,21 @@
   
 </style>
 
-<h3 class="whiteBG float enlarge_anim" style="color: black; position:absolute; padding: 2ch; left:2ch; top: 2ch;">Fyll ut attributt-felt, og trykk<br> for å legge til ny planet!</h3>
+{#if show_tooltip}
+<h3 transition:fly={{x: -10, y:10, duration:1000}} class="whiteBG float enlarge_anim" on:click={toggle_tooltip} style="color: black; position:fixed; padding: 2ch; left:2ch; bottom: 2ch; cursor: pointer;">Fyll ut attributt-feltene, og venstreklikk for å legge til ny planet!</h3>
+{/if}
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
     margin-left: auto;
 display: block; background: radial-gradient(#000000FF, #00000000, #00000000)"></canvas>
 <div class="centering_container radialGradientBG">
-  <div class="centering_element">
+  <div class="centering_element no_top_padding">
     <h3>Attributter til ny planet</h3>
     <label for="vekt" style="font-weight:normal;">Vekt (mengde solmasser):</label>
     <input type="text" class="float enlarge_anim" id="vekt" name="vekt"><br><br>
     <label for="farge" style="font-weight:normal;">Farge (F.eks. "purple" / "#FF00FF"):</label>
     <input type="text" class="float enlarge_anim" id="farge" name="farge"><br><br>
   </div>
-  <div class="centering_element">
+  <div class="centering_element no_top_padding">
     <h3>Zoom</h3>
     <label for="meters_per_screenwidth" style="font-weight:normal;">Meter per bredde<br> (multiplisert med 150E9, standard=6):</label>
     <input type="text" class="float enlarge_anim" id="meters_per_screenwidth_button" name="meters_per_screenwidth"><br><br>
