@@ -9,8 +9,8 @@
 <style>
 .container1 {
   display: flex;
-  justify-content: center; /* space between text & image */
-  align-items: center;            /* vertically center */
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   box-sizing: border-box;
   overflow: hidden;  
@@ -19,9 +19,11 @@
 .image_1 {
   border: 1px solid #ddd;
   border-radius: 4px;
+  background-color:black;
   padding: 5px;
   width: 300px;
-  border-radius: 50%;
+  border-radius: 800px; /* avrund helt uten å lage ellipse*/
+  box-shadow: 10px 2px 10px 10px rgba(0,0,0,0.9);
 }
 
 .default_text_banner {
@@ -50,6 +52,7 @@
   min-width: 30ch;
   max-width: 75ch;
   background-color: #00000080;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.9);
 }
 
 .heading1Div {
@@ -61,7 +64,7 @@
 
 .darken {
   /*background: linear-gradient(to bottom, #00000000, #00000040, #00000000);*/
-  background: radial-gradient(closest-side, #00000040, #00000000);
+  background: radial-gradient(closest-side, #00000060, #00000000);
 }
 h1{
   position: relative;

@@ -1,8 +1,38 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+  import { writable } from 'svelte/store';
 
   let BG_color = "#000000bf"
-  let TXT_color = "#FFFFFF"
+
+  const def_color = [0x111188, 0xFF3366, 0x002200];
+  let slider_value = 0;
+  let get_color = (index) => {
+    let color_red_channel = def_color[index] & 0xFF0000;
+    color_red_channel/=16**4;
+    color_red_channel += slider_value;
+    color_red_channel %= 256;
+    let color_green_channel = def_color[index] & 0x00FF00;
+    color_green_channel/=16**2;
+    color_green_channel += slider_value;
+    color_green_channel %= 256;
+    let color_blue_channel = def_color[index] & 0x0000FF;
+    color_blue_channel += slider_value;
+    color_blue_channel %= 256;
+    const digitsPerChannel = 2;
+    return "#" + color_red_channel.toString(16).padStart(digitsPerChannel, '0')
+               + color_green_channel.toString(16).padStart(digitsPerChannel, '0')
+               + color_blue_channel.toString(16).padStart(digitsPerChannel, '0');
+  }
+  let BG_color1 = $state(get_color(0));
+  let BG_color2 = $state(get_color(1));
+  let BG_color3 = $state(get_color(2));
+
+  let update_BG_colors = () => {
+    BG_color1 = (get_color(0));
+    BG_color2 = (get_color(1));
+    BG_color3 = (get_color(2));
+  }
+
 	let { children } = $props();
 </script>
 <style>
@@ -33,7 +63,7 @@
     width: 100%;
     min-height: 100vh;
     height: 100%;
-    background: linear-gradient(to bottom right, #111188, #FF3366, #002200);
+    background: linear-gradient(to bottom right, var(--bg-color1), var(--bg-color2), var(--bg-color3));
     background-repeat: no-repeat; /* prevents looping */
     margin: 0;
     padding: 0;
@@ -147,13 +177,13 @@
   <div style="margin: auto auto;">
     <h3 class="rainbow-text">Bakgrunnsslider</h3>
     <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+      <input type="range" min="0" max="255" bind:value={slider_value} on:input={update_BG_colors} class="slider" id="bakgrunnsslider">
     </div>
   </div>
 </div>
 
 <div class="content" style="margin:0;padding:0;">
-  <div class="gradient_wrapper">
+  <div class="gradient_wrapper" style="--bg-color1: {BG_color1};--bg-color2: {BG_color2};--bg-color3: {BG_color3};">
     <div class="star_backdrop">
       {@render children?.()}
     </div>
