@@ -23,7 +23,7 @@
   //--popup-----------------------
 
   const canvas_width=1600;
-  const canvas_height=1000;
+  const canvas_height=800;
 
   class Vector2 {
     constructor(_in_x=0.0,_in_y=0.0){
@@ -523,7 +523,7 @@
   border-top: white 2px solid;
   border-bottom: white 2px solid;
   "
-  >Gravitasjonskrefter - Solsystemet</h1>
+  >En simulering av solsystemet</h1>
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
     margin-left: auto;
 display: block; background: radial-gradient(circle closest-side, black, #00000000)"></canvas>
@@ -531,9 +531,9 @@ display: block; background: radial-gradient(circle closest-side, black, #0000000
   <div class="centering_element no_top_padding">
     <h3>Attributter til ny planet</h3>
     <label for="vekt" style="font-weight:normal;">Vekt (mengde solmasser):</label>
-    <input type="text" class="float enlarge_anim" id="vekt" name="vekt"><br><br>
+    <input type="text" value=0.01 class="float enlarge_anim" id="vekt" name="vekt"><br><br>
     <label for="farge" style="font-weight:normal;">Farge (F.eks. "purple" / "#FF00FF"):</label>
-    <input type="text" class="float enlarge_anim" id="farge" name="farge"><br><br>
+    <input type="text" value="red" class="float enlarge_anim" id="farge" name="farge"><br><br>
   </div>
   <div class="centering_element no_top_padding">
     <h3>Zoom</h3>
