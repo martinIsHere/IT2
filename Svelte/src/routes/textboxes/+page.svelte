@@ -103,7 +103,7 @@ h1::after{
   <div class="container1">
     <img class="image_1" src={src} alt="A slightly creepy man against orange background"/>
     <p class="block1" style="font-weight:normal;">
-    Internettet har revolusjonert måten folk kommuniserer på. I dag kan vi sende meldingar, e-post og videochattar med menneske over heile verda på sekund. Avstanden mellom folk har minka, og mange held kontakt med vener og familie gjennom sosiale medium.
+    Internett har revolusjonert måten folk kommuniserer på. I dag kan vi sende meldinger, e-post og videochatter med mennesker over hele verden på sekunder. Avstanden mellom folk har minket, og mange holder kontakt med venner og familie gjennom sosiale medier.
     </p>
   </div>
 
@@ -112,7 +112,7 @@ h1::after{
   </div>
   <div class="container1">
     <p class="block1" style="font-weight:normal;">
-      Tidlegare måtte ein til biblioteket for å finne informasjon, men no ligg det meste berre nokre tastetrykk unna. Internettet gjer det mogleg for alle å lære nye ting, men det har òg ført til utfordringar med falske nyheiter og feilinformasjon.
+      Tidligere måtte man til biblioteket for å finne informasjon, men nå ligger det meste bare noen tastetrykk unna. Internett gjør det mulig for alle å lære nye ting, men det har også ført til utfordringer med falske nyheter og feilinformasjon.
     </p>
     <img class="image_1" src={src2} alt="A slightly creepy man against orange background"/>
   </div>
@@ -123,7 +123,7 @@ h1::after{
   <div class="container1">
     <img class="image_1" src={src3} alt="A slightly creepy man against orange background"/>
     <p class="block1" style="font-weight:normal;">
-      Netthandel har endra måten vi kjøper varer og tenester på. Mange butikkar har flytta delar av drifta si til nettet, og nye bedrifter har oppstått som berre finst digitalt. Samstundes har lokale butikkar fått sterkare konkurranse.
+      Netthandel har endret måten vi kjøper varer og tjenester på. Mange butikker har flyttet deler av driften sin til nettet, og nye bedrifter har oppstått som bare finnes digitalt. Samtidig har lokale butikker fått sterkere konkurranse.
     </p>
   </div>
 
@@ -132,7 +132,7 @@ h1::after{
   </div>
   <div class="container1">
     <p class="block1" style="font-weight:normal;">
-      Fleire yrke krev no digital kompetanse, og mange kan arbeide heimanfrå takka vere internettet. Dette har gitt større fridom for nokre, men òg gjort skiljet mellom arbeid og fritid mindre tydeleg.
+      Flere yrker krever nå digital kompetanse, og mange kan arbeide hjemmefra takket være internett. Dette har gitt større frihet for noen, men også gjort skillet mellom arbeid og fritid mindre tydelig.
     </p>
     <img class="image_1" src={src4} alt="A slightly creepy man against orange background"/>
   </div>
@@ -143,25 +143,25 @@ h1::after{
   <div class="container1">
     <img class="image_1" src={src5} alt="A slightly creepy man against orange background"/>
     <p class="block1" style="font-weight:normal;">
-      Nettkurs og digitale læringsplattformar har gjort utdanning meir tilgjengeleg. Studentar kan følgje førelesingar frå universitet over heile verda, men det kan òg vere utfordrande å halde motivasjonen utan fysisk oppmøte.
+      Nettkurs og digitale læringsplattformer har gjort utdanning mer tilgjengelig. Studenter kan følge forelesninger fra universiteter over hele verden, men det kan også være utfordrende å holde motivasjonen uten fysisk oppmøte.
     </p>
   </div>
 
   <div class="heading1Div">
-    <h1 class="intro darken">Sosiale relasjonar</h1>
+    <h1 class="intro darken">Sosiale relasjoner</h1>
   </div>
   <div class="container1">
     <p class="block1" style="font-weight:normal;">
-      Internettet har skapt nye former for fellesskap, der folk møtast gjennom spel, forum og sosiale medium. Samstundes kan overdriven bruk føre til isolasjon og mindre ansikt-til-ansikt kontakt.
+      Internett har skapt nye former for fellesskap, der folk møtes gjennom spill, forum og sosiale medier. Samtidig kan overdreven bruk føre til isolasjon og mindre ansikt-til-ansikt kontakt.
     </p>
     <img class="image_1" src={src6} alt="A slightly creepy man against orange background"/>
   </div>
 
   <div class="heading1Div">
-    <h1 class="intro darken">Verktøy og gøy</h1>
+    <h1 class="intro darken">Verktøy og moro</h1>
   </div>
   <p class="block2" style="font-weight:normal;">
-    Da internett ble allemannseie, åpnet det døren til en helt ny virkelighet. Plutselig hadde vi enkel tilgang til nyttige verktøy som gjorde hverdagen lettere, og samtidig uendelige muligheter for moro. Spill, simuleringer og kreative applikasjoner ble bare et klikk unna – og forvandlet nettet til et sted der læring, lek og teknologi møtes. <a class="link1" href="/popup_and_sim">Videre</a>
+    Da internett ble allemannseie, åpnet det døren til en helt ny virkelighet. Plutselig hadde vi enkel tilgang til nyttige verktøy som gjorde hverdagen lettere, og samtidig uendelige muligheter for moro. Spill, simuleringer og kreative applikasjoner ble bare et klikk unna – og forvandlet nettet til et sted der læring, lek og teknologi møtes. <a href="/popup_and_sim">Videre</a>
   </p>
   <div style="min-height:50ch;"></div>
 </div>

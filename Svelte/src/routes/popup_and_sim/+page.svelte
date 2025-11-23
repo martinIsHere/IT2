@@ -484,6 +484,8 @@
   font-size: 2.5rem;             /* Stor og tydelig */
   font-weight: bold;             /* Fremhevet */
   margin: 0;                     /* Fjern standard margin */
+  border-top: white 2px solid;
+  border-bottom: white 2px solid;
   "
   >Solsystemet</h1>
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
