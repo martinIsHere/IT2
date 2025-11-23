@@ -208,6 +208,7 @@
   <a class="toolbar_link" href="/">Hjem</a>
   <a class="toolbar_link" href="/textboxes">Kort gjennomgang</a>
   <a class="toolbar_link" href="/popup_and_sim">Simulering av planeter</a>
+  <a class="toolbar_link" href="/quiz">Quiz</a>
   <div style="margin: auto auto;">
     <h3 class="rainbow-text">Bakgrunnsslider</h3>
     <div class="slidercontainer">

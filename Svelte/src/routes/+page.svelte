@@ -63,6 +63,14 @@
     color: #bb33ff; /* bright purple */
   }
 
+  .enlarge_anim {
+    transition: scale 0.4s;
+  }
+
+  .enlarge_anim:hover {
+    scale:1.1;
+  }
+
 </style>
 
 <div class="intro_banner">
@@ -70,8 +78,12 @@
 
   {#if !navn_er_bekreftet}
     <p class="intro" style="padding-bottom:10px;">Hva heter du?</p>
-    <label class="intro">Fornavn: <input bind:value={fornavn} /></label><br>
-    <label class="intro">Etternavn: <input bind:value={etternavn} /></label><br>
+    <div class="intro">
+      <label>Fornavn: <input class="enlarge_anim" bind:value={fornavn} /></label>
+    </div><br>
+    <div class="intro">
+    <label>Etternavn: <input class="enlarge_anim" bind:value={etternavn} /></label><br>
+    </div>
     <div class="centering_container">
     <button class="bekreft_knapp" on:click={confirmName}>Bekreft</button> <br>
     </div>

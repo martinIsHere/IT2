@@ -98,6 +98,16 @@ h1::after{
 
 <div class="default_text_banner intro_banner2">
   <div class="heading1Div">
+    <h1 class="intro darken">Opprinnelsen av internettet</h1>
+  </div>
+  <div class="container1">
+    <p class="block1" style="font-weight:normal;">
+      Internett har sine røtter tilbake til 1960-tallet, da ARPANET ble utviklet som det første nettverket som la grunnlaget for dagens internett. Senere, i 1991, introduserte Tim Berners-Lee World Wide Web, som gjorde nettet tilgjengelig for allmennheten. For kommunikasjon mellom nettlesere og servere ble protokollen HTTP (HyperText Transfer Protocol) etablert.
+    </p>
+    <img class="image_1" src={src} alt="A slightly creepy man against orange background"/>
+  </div>
+
+  <div class="heading1Div">
     <h1 class="intro darken">Kommunikasjon</h1>
   </div>
   <div class="container1">
