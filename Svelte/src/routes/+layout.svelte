@@ -1,5 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+    import { mount } from 'svelte';
 
   // standard farger
   const def_color = [0x0053FF, 0x53FF00, 0xFF0053];
@@ -51,6 +52,11 @@
     BG_color2 = (get_color(1));
     BG_color3 = (get_color(2));
   }
+
+  import { onMount } from 'svelte';
+  onMount(()=>{
+    slider_value=0;
+  });
 
 	let { children } = $props();
 
@@ -117,7 +123,7 @@
     font-size: 14pt;
     z-index: 100;
   }
-  .slidecontainer {
+  .slidercontainer {
     margin: auto auto;
   }
   .slider {
@@ -202,14 +208,19 @@
   <a class="toolbar_link" href="/popup_and_sim">Simulering av planeter</a>
   <div style="margin: auto auto;">
     <h3 class="rainbow-text">Bakgrunnsslider</h3>
-    <div class="slidecontainer">
-      <input type="range" min="0" max="255" bind:value={slider_value} oninput={update_BG_colors} class="slider" id="bakgrunnsslider">
+    <div class="slidercontainer">
+      <input type="range" min="0" max="255" 
+        bind:value={slider_value} 
+        oninput={update_BG_colors} 
+        class="slider"
+        id="bakgrunnsslider">
     </div>
   </div>
 </div>
 
 <div class="content" style="margin:0;padding:0;">
-  <div class="gradient_wrapper" style="--bg-color1: {BG_color1};--bg-color2: {BG_color2};--bg-color3: {BG_color3};">
+  <div class="gradient_wrapper" 
+    style="--bg-color1: {BG_color1};--bg-color2: {BG_color2};--bg-color3: {BG_color3};">
     <div class="star_backdrop">
       {@render children?.()}
     </div>
