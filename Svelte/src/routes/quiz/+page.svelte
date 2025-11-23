@@ -6,8 +6,11 @@
   //   { text: "Hvilket år ble Svelte lansert?", options: ["2016", "2018", "2020"], correct: 1 }
   // ];
 
-  let questions = [
-      { text: "Når ble internett opprinnelig utviklet?", options: ["1960-tallet", "1970-tallet", "1980-tallet"], correct: 0 },
+  let questions = [ // array med spørsmål objekt
+      { text: "Når ble internett opprinnelig utviklet?", // spørsmålet
+      options: ["1960-tallet", "1970-tallet", "1980-tallet"], // svaralternativ
+      correct: 0 // indeks i "options" array til korrekt svar
+      },
       { text: "Hva het det første nettverket som regnes som starten på internett?", options: ["World Wide Web", "ARPANET", "TCP/IP"], correct: 1 },
       { text: "Hvem regnes som oppfinneren av World Wide Web?", options: ["Vint Cerf", "Tim Berners-Lee", "Bill Gates"], correct: 1 },
       { text: "Hva står HTTP for?", options: ["HyperText Transfer Protocol", "High Transmission Technology Protocol", "Hyperlink Transfer Process"], correct: 0 },

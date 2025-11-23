@@ -50,7 +50,7 @@
   padding: 25px;
   box-sizing: border-box;
   height: auto;
-  width: 50%;
+  width: 80%;
   min-width: 30ch;
   max-width: 75ch;
   background-color: #00000080;
@@ -62,7 +62,6 @@
   padding: 25px;
   box-sizing: border-box;
   height: auto;
-  width: 100%;
   min-width: 30ch;
   max-width: 75ch;
   background-color: #00000080;
@@ -170,8 +169,10 @@ h1::after{
   <div class="heading1Div">
     <h1 class="intro darken">Verktøy og moro</h1>
   </div>
-  <p class="block2" style="font-weight:normal;">
-    Da internett ble allemannseie, åpnet det døren til en helt ny virkelighet. Plutselig hadde vi enkel tilgang til nyttige verktøy som gjorde hverdagen lettere, og samtidig uendelige muligheter for moro. Spill, simuleringer og kreative applikasjoner ble bare et klikk unna – og forvandlet nettet til et sted der læring, lek og teknologi møtes. <a href="/popup_and_sim">Videre</a>
-  </p>
+  <div class="container1">
+    <p class="block2" style="font-weight:normal;">
+      Da internett ble allemannseie, åpnet det døren til en helt ny virkelighet. Plutselig hadde vi enkel tilgang til nyttige verktøy som gjorde hverdagen lettere, og samtidig uendelige muligheter for moro. Spill, simuleringer og kreative applikasjoner ble bare et klikk unna – og forvandlet nettet til et sted der læring, lek og teknologi møtes. <a href="/popup_and_sim">Videre</a>
+    </p>
+  </div>
   <div style="min-height:50ch;"></div>
 </div>
