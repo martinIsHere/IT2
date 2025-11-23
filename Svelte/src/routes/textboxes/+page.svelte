@@ -1,10 +1,10 @@
 <script>
-	import src from '$lib/assets/smiling_man1.png';
-	import src2 from '$lib/assets/smiling_man2.png';
-	import src3 from '$lib/assets/smiling_man3.png';
-	import src4 from '$lib/assets/smiling_man4.png';
-	import src5 from '$lib/assets/smiling_man5.png';
-	import src6 from '$lib/assets/smiling_man6.png';
+	import src from '$lib/assets/img1.jpg';
+	import src2 from '$lib/assets/img2.jpg';
+	import src3 from '$lib/assets/img3.jpg';
+	import src4 from '$lib/assets/img4.jpeg';
+	import src5 from '$lib/assets/img5.jpg';
+	import src6 from '$lib/assets/img6.jpg';
 </script>
 <style>
 .container1 {
@@ -21,7 +21,7 @@
   border-radius: 4px;
   background-color:black;
   padding: 5px;
-  width: 300px;
+  width: 800px;
   border-radius: 800px; /* avrund helt uten å lage ellipse*/
   box-shadow: 10px 2px 10px 10px rgba(0,0,0,0.9);
 }
@@ -91,8 +91,8 @@ h1::after{
     <h1 class="intro darken">Kommunikasjon</h1>
   </div>
   <div class="container1">
-  <img class="image_1" src={src} alt="A slightly creepy man against orange background"/>
-  <p class="block1" style="font-weight:normal;">
+    <img class="image_1" src={src} alt="A slightly creepy man against orange background"/>
+    <p class="block1" style="font-weight:normal;">
     Internettet har revolusjonert måten folk kommuniserer på. I dag kan vi sende meldingar, e-post og videochattar med menneske over heile verda på sekund. Avstanden mellom folk har minka, og mange held kontakt med vener og familie gjennom sosiale medium.
     </p>
   </div>
@@ -100,45 +100,45 @@ h1::after{
     <h1 class="intro darken">Kunnskap og informasjon</h1>
   </div>
   <div class="container1">
-  <img class="image_1" src={src} alt="A slightly creepy man against orange background"/>
-  <p class="block1" style="font-weight:normal;">
-Tidlegare måtte ein til biblioteket for å finne informasjon, men no ligg det meste berre nokre tastetrykk unna. Internettet gjer det mogleg for alle å lære nye ting, men det har òg ført til utfordringar med falske nyheiter og feilinformasjon.
-  </p>
+    <img class="image_1" src={src2} alt="A slightly creepy man against orange background"/>
+    <p class="block1" style="font-weight:normal;">
+      Tidlegare måtte ein til biblioteket for å finne informasjon, men no ligg det meste berre nokre tastetrykk unna. Internettet gjer det mogleg for alle å lære nye ting, men det har òg ført til utfordringar med falske nyheiter og feilinformasjon.
+    </p>
   </div>
   <div class="heading1Div">
     <h1 class="intro darken">Handel og økonomi</h1>
   </div>
   <div class="container1">
-  <img class="image_1" src={src2} alt="A slightly creepy man against orange background"/>
-  <p class="block1" style="font-weight:normal;">
-Netthandel har endra måten vi kjøper varer og tenester på. Mange butikkar har flytta delar av drifta si til nettet, og nye bedrifter har oppstått som berre finst digitalt. Samstundes har lokale butikkar fått sterkare konkurranse.
-  </p>
+    <img class="image_1" src={src3} alt="A slightly creepy man against orange background"/>
+    <p class="block1" style="font-weight:normal;">
+      Netthandel har endra måten vi kjøper varer og tenester på. Mange butikkar har flytta delar av drifta si til nettet, og nye bedrifter har oppstått som berre finst digitalt. Samstundes har lokale butikkar fått sterkare konkurranse.
+    </p>
   </div>
   <div class="heading1Div">
     <h1 class="intro darken">Arbeidsliv</h1>
   </div>
   <div class="container1">
-  <img class="image_1" src={src4} alt="A slightly creepy man against orange background"/>
-  <p class="block1" style="font-weight:normal;">
-Fleire yrke krev no digital kompetanse, og mange kan arbeide heimanfrå takka vere internettet. Dette har gitt større fridom for nokre, men òg gjort skiljet mellom arbeid og fritid mindre tydeleg.
-  </p>
+    <img class="image_1" src={src4} alt="A slightly creepy man against orange background"/>
+    <p class="block1" style="font-weight:normal;">
+      Fleire yrke krev no digital kompetanse, og mange kan arbeide heimanfrå takka vere internettet. Dette har gitt større fridom for nokre, men òg gjort skiljet mellom arbeid og fritid mindre tydeleg.
+    </p>
   </div>
   <div class="heading1Div">
     <h1 class="intro darken">Utdanning</h1>
   </div>
   <div class="container1">
-  <img class="image_1" src={src5} alt="A slightly creepy man against orange background"/>
-  <p class="block1" style="font-weight:normal;">
-Nettkurs og digitale læringsplattformar har gjort utdanning meir tilgjengeleg. Studentar kan følgje førelesingar frå universitet over heile verda, men det kan òg vere utfordrande å halde motivasjonen utan fysisk oppmøte.
-  </p>
+    <img class="image_1" src={src5} alt="A slightly creepy man against orange background"/>
+    <p class="block1" style="font-weight:normal;">
+      Nettkurs og digitale læringsplattformar har gjort utdanning meir tilgjengeleg. Studentar kan følgje førelesingar frå universitet over heile verda, men det kan òg vere utfordrande å halde motivasjonen utan fysisk oppmøte.
+    </p>
   </div>
   <div class="heading1Div">
     <h1 class="intro darken">Sosiale relasjonar</h1>
   </div>
   <div class="container1">
-  <img class="image_1" src={src6} alt="A slightly creepy man against orange background"/>
-  <p class="block1" style="font-weight:normal;">
+    <img class="image_1" src={src6} alt="A slightly creepy man against orange background"/>
+    <p class="block1" style="font-weight:normal;">
       Internettet har skapt nye former for fellesskap, der folk møtast gjennom spel, forum og sosiale medium. Samstundes kan overdriven bruk føre til isolasjon og mindre ansikt-til-ansikt kontakt.
-  </p>
+    </p>
   </div>
 </div>
