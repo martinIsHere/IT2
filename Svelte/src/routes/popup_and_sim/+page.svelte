@@ -4,16 +4,21 @@
   //--popup------------------------
   import { fly } from 'svelte/transition';
   import { fade } from 'svelte/transition';
+  // import { flip } from 'svelte/animate';
 
   let popup_is_hidden = true;
   let show_tooltip = true;
+  let show_quiz_recommendation = false;
 
   let toggle_popup = () => { popup_is_hidden=!popup_is_hidden; }
   let toggle_tooltip = () => { show_tooltip=!show_tooltip; }
+  let toggle_quiz_recommendation = () => { show_quiz_recommendation=!show_quiz_recommendation; }
 
   const popup_ventetid_sekund = 4;
+  const quiz_rec_ventetid_sekund = 10;
 
   setTimeout(toggle_popup, popup_ventetid_sekund*1000);
+  setTimeout(toggle_quiz_recommendation, quiz_rec_ventetid_sekund*1000);
 
   //--popup-----------------------
 
@@ -195,6 +200,7 @@
   }
 
   let set_new_view_width = () => {}
+  let meters_per_screenwidth_range = 6;
 
   onMount(()=>{
     // --- setup
@@ -204,7 +210,6 @@
     canvas.addEventListener("click", mouse_event_handler);
     const vektInput = document.getElementById("vekt");
     const fargeInput = document.getElementById("farge");
-    const meters_per_screenwidth_input = document.getElementById("meters_per_screenwidth_button");
 
     // Get the 2D rendering context
     const canvas_context = canvas.getContext("2d");
@@ -212,7 +217,7 @@
     let x = 0.0;
 
     set_new_view_width = () => {
-      k_meters_per_pixel = meters_per_screenwidth_input.value*150E9/canvas_width;
+      k_meters_per_pixel = meters_per_screenwidth_range*150E9/canvas_width;
       generate_scaled_c();
       console.log(k_meters_per_pixel);
     };
@@ -458,21 +463,53 @@
   .scroll_box {
     overflow-y: auto;
   }
-  
+
+  .flex_container {
+    display: flex;
+    flex-direction: column; /* Vertical layout */
+    width: 400px;           /* Or auto */
+    height: auto;           /* Variable size */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  .flex_item {
+    padding: 10px;
+  }
 </style>
 
-{#if show_tooltip}
-<button 
-    style="visibility: hidden; position:absolute;"
-    on:click={toggle_tooltip}>
-  <h3 
-      transition:fly={{x: -10, y:10, duration:1000}} 
-      class="whiteBG float enlarge_anim" 
-      style="visibility: visible; black; position:fixed; padding: 2ch; left:2ch; bottom: 2ch; cursor: pointer; display:inline;">
-      Fyll ut attributt-feltene, og venstreklikk for å legge til ny planet!
-  </h3>
-</button>
-{/if}
+<div class="flex_container">
+  {#if show_tooltip}
+  <div>
+    <button 
+        style="visibility: hidden;"
+        on:click={toggle_tooltip}>
+      <h3 
+          transition:fly={{x: -10, y:10, duration:1000}} 
+          class="whiteBG float enlarge_anim" 
+          style="visibility: visible; black; padding: 2ch; cursor: pointer;">
+          Fyll ut attributt-feltene, og venstreklikk for å legge til ny planet!
+      </h3>
+    </button>
+  </div>
+  {/if}
+  {#if show_quiz_recommendation}
+  <div>
+    <button 
+        style="visibility: hidden;"
+        on:click={toggle_quiz_recommendation}>
+      <h3 
+          transition:fly={{x: -10, y:10, duration:1000}}
+          class="whiteBG float enlarge_anim" 
+          style="visibility: visible; black;padding: 2ch; cursor: pointer;">
+          Prøv gjerne Quiz-en og finn ut hvor mye du har lært!
+      </h3>
+    </button>
+  </div>
+  {/if}
+</div>
+
 <h1
     style="
   display: block;                /* Blokkvisning */
@@ -500,9 +537,8 @@ display: block; background: radial-gradient(circle closest-side, black, #0000000
   </div>
   <div class="centering_element no_top_padding">
     <h3>Zoom</h3>
-    <label for="meters_per_screenwidth" style="font-weight:normal;">Meter per bredde<br> (multiplisert med 150E9, standard=6):</label>
-    <input type="text" class="float enlarge_anim" id="meters_per_screenwidth_button" name="meters_per_screenwidth"><br><br>
-    <button class="button_confirm2" on:click={set_new_view_width}>Bekreft</button><br>
+    <label for="meters_per_screenwidth" style="font-weight:normal;">Meter per bredde<br> (multiplisert med 150E9):<span style="color:red; font-weight: bold; background-color: #000000bd; padding: 2px;">{meters_per_screenwidth_range.toString().padStart(3, "0")}</span>&nbsp;</label> <br>
+    <input type="range" min="1" max="100" class="float enlarge_anim" bind:value={meters_per_screenwidth_range} on:input={set_new_view_width}  id="meters_per_screenwidth_button" name="meters_per_screenwidth"><br><br>
   </div>
 </div>
 
