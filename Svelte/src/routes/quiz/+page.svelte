@@ -21,14 +21,25 @@
   let current = 0;
   let score = 0;
   let finished = false;
+  let answer_selected = false;
 
-  function answer(index) {
+  function select_answer(index) {
     if (index === questions[current].correct) score++;
+    answer_selected = true;
+  }
+
+  function confirm_answer() {
     if (current < questions.length - 1) {
       current++;
     } else {
       finished = true;
     }
+    answer_selected = false;
+  }
+
+  function get_color(question, index) {
+    if (index == question.correct) return "#00FF00";
+    return "#FF0000";
   }
 </script>
 
@@ -47,15 +58,34 @@
   .bekreft_knapp:hover {
     background-color: #ffffff40;
   }
+  .bekreft_knapp_no_hover {
+    padding: 2ch 4ch;
+    margin: 4ch 4ch;
+    text-align: center;
+    background-color: #ffffff20; /* semi-transparent white */
+    border: 1px solid #ffffff50;
+    border-radius: 8px;
+    color: white;
+    cursor: cursor;
+    transition: background-color 0.3s;
+  }
 </style>
 
 <div style="z-index:0; position: fixed; min-width: 100vw;min-height: 100vh;left:0;top:0; background-color: #000000bd;"></div>
+<div style="min-height:100px;"></div>
 <div style="z-index:1;position: relative; text-align: center;">
   {#if !finished}
     <h2>{questions[current].text}</h2>
-    {#each questions[current].options as option, i}
-      <button class="bekreft_knapp" on:click={() => answer(i)}>{option}</button>
-    {/each}
+    {#if !answer_selected} <!-- holder på å velge svar -->
+      {#each questions[current].options as option, i (i)}
+        <button class="bekreft_knapp" on:click={() => select_answer(i)}>{option}</button>
+      {/each}
+    {:else} <!-- har valgt, men ikke gått videre-->
+      {#each questions[current].options as option, i (i)}
+        <button class="bekreft_knapp_no_hover" style="background-color: {get_color(questions[current], i)};">{option}</button>
+      {/each}
+      <br><button class="bekreft_knapp" on:click={confirm_answer}>videre</button>
+    {/if}
   {:else}
     <h2>Quiz ferdig!</h2>
     <p style="text-align: center;">Du fikk {score} av {questions.length} <span style="color:#00FF00;font-weight:normal;">riktige</span>.</p>
