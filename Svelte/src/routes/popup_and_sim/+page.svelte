@@ -439,9 +439,9 @@
     text-align: left;
   }
 
-  .linearBG {
-    background: linear-gradient(to bottom, #00000000, #FF00FF40, #00000000);
-  }
+  /* .linearBG { */
+  /*   background: linear-gradient(to bottom, #00000000, #FF00FF40, #00000000); */
+  /* } */
 
   .whiteBG {
     background-color: white;
@@ -462,7 +462,14 @@
 </style>
 
 {#if show_tooltip}
-<h3 transition:fly={{x: -10, y:10, duration:1000}} class="whiteBG float enlarge_anim" on:click={toggle_tooltip} style="color: black; position:fixed; padding: 2ch; left:2ch; bottom: 2ch; cursor: pointer;">Fyll ut attributt-feltene, og venstreklikk for å legge til ny planet!</h3>
+<button on:click={toggle_tooltip}>
+  <h3 
+      transition:fly={{x: -10, y:10, duration:1000}} 
+      class="whiteBG float enlarge_anim" 
+      style="color: black; position:fixed; padding: 2ch; left:2ch; bottom: 2ch; cursor: pointer;">
+      Fyll ut attributt-feltene, og venstreklikk for å legge til ny planet!
+  </h3>
+</button>
 {/if}
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
     margin-left: auto;
@@ -489,7 +496,7 @@ display: block; background: radial-gradient(#000000FF, #00000000, #00000000)"></
   <div transition:fly={{x: -10, y:10, duration:1000}} class="popup_size whiteBG bare float noOverflow scroll_box wavyBG" style="z-index: 9002; border-radius: 1%;">
     <div class="noInherit" style="z-index:9003;">
       <div class="noOverflow" style="margin-bottom:8ch;">
-        <h2 class="center_static" style="color: #AAFFAA;">
+        <h2 class="center_static" style="color: #AAFFAA; font-weight:normal;">
           <u>Pop-up vinduer</u>
         </h2>
         <p class="align_left_2padding clean_border whiteBG">

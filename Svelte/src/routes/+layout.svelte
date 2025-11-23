@@ -1,12 +1,13 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-  import { writable } from 'svelte/store';
 
-  let BG_color = "#000000bf"
-
+  // standard farger
   const def_color = [0x0053FF, 0x53FF00, 0xFF0053];
-  let slider_value = 0;
-  function reverse(val) {
+
+  // sliderverdien
+  let slider_value = $state(0);
+
+  let reverse = (val : number) => {
     /*
       Når fargen overskrider 255 så går den tilbake:
           For høg verdi, vil retning skiftes mot null
@@ -18,10 +19,13 @@
     */
     if(val>255) {
       return 255-(val%256);
+    } 
+    else if (val < 0) {
+      val = 0;
     }
     return val;
   }
-  let get_color = (index) => {
+  let get_color = (index : number) => {
     let color_red_channel = def_color[index] & 0xFF0000;
     color_red_channel/=16**4;
     color_red_channel += slider_value;
@@ -49,7 +53,9 @@
   }
 
 	let { children } = $props();
+
 </script>
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
   :global(html), :global(body){
@@ -138,12 +144,17 @@
     scale: 1.1;
   }
   :global(h1){
+    font-family: "Raleway", sans-serif;
     font-size: 62pt;
     font-weight: lighter;
   }
   :global(h2){
+    font-family: "Raleway", sans-serif;
     font-size: 42pt;
     font-weight: lighter;
+  }
+  :global(h3) {
+    font-family: "Raleway", sans-serif;
   }
   :global(p){
     font-size: 24pt;
@@ -192,7 +203,7 @@
   <div style="margin: auto auto;">
     <h3 class="rainbow-text">Bakgrunnsslider</h3>
     <div class="slidecontainer">
-      <input type="range" min="0" max="255" bind:value={slider_value} on:input={update_BG_colors} class="slider" id="bakgrunnsslider">
+      <input type="range" min="0" max="255" bind:value={slider_value} oninput={update_BG_colors} class="slider" id="bakgrunnsslider">
     </div>
   </div>
 </div>

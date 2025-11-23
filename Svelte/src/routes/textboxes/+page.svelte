@@ -36,12 +36,12 @@
   background: linear-gradient(to bottom, #00000000, #000000FF,#000000FF);
 }
 
-.black_banner {
-  position:relative;
-  width: 100vw;
-  padding: 10px;
-  background-color: black;
-}
+/* .black_banner { */
+/*   position:relative; */
+/*   width: 100vw; */
+/*   padding: 10px; */
+/*   background-color: black; */
+/* } */
 
 .block1{
   border: 2px solid;
