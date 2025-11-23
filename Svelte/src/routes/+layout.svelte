@@ -99,6 +99,7 @@
 
   .star_backdrop {
     background-image: url("$lib/assets/Stars.svg");
+    background-repeat: repeat;
     margin: 0;
     padding: 0;
     color: #FFFFFF;
@@ -106,6 +107,7 @@
     height: 100%;
     width:100%;
     z-index: 0;
+    background-size: 500px;
   }
 
   .toolbar {

@@ -487,10 +487,10 @@
   border-top: white 2px solid;
   border-bottom: white 2px solid;
   "
-  >Solsystemet</h1>
+  >Gravitasjonskrefter - Solsystemet</h1>
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
     margin-left: auto;
-display: block; background: radial-gradient(#000000FF, #00000000, #00000000)"></canvas>
+display: block; background: radial-gradient(circle closest-side, black, #00000000)"></canvas>
 <div class="centering_container radialGradientBG">
   <div class="centering_element no_top_padding">
     <h3>Attributter til ny planet</h3>

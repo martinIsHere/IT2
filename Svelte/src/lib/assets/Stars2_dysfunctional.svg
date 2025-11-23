@@ -1,0 +1,82 @@
+<!-- big-stars.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+  <title>Yellow–White Starfield</title>
+  <desc>A decorative starfield with varied, large stars using warm yellow-white gradients and glow.</desc>
+
+  <!-- Background (adjust as needed) -->
+  <rect x="0" y="0" width="1600" height="900" fill="#0b1026"/>
+
+  <defs>
+    <!-- Star gradient: warm yellow to near-white -->
+    <radialGradient id="starGradient" cx="50%" cy="50%" r="60%">
+      <stop offset="0%"  stop-color="#fff9d6"/>   <!-- soft white -->
+      <stop offset="60%" stop-color="#ffe680"/>   <!-- warm yellow -->
+      <stop offset="100%" stop-color="#ffd34d"/>  <!-- stronger yellow edge -->
+    </radialGradient>
+
+    <!-- Subtle cool core for contrast on some stars -->
+    <radialGradient id="starGradientCool" cx="50%" cy="50%" r="60%">
+      <stop offset="0%"  stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#fff0b0"/>
+      <stop offset="100%" stop-color="#ffd970"/>
+    </radialGradient>
+
+    <!-- Soft glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Reusable star polygons -->
+    <!-- 5-point star (parameters: outer radius ~1, inner radius ~0.45) -->
+    <symbol id="star5" viewBox="-100 -100 200 200">
+      <polygon points="
+        0,-100  28,-32  95,-31  46,12
+        59,80    0,45  -59,80  -46,12
+        -95,-31 -28,-32
+      " fill="url(#starGradient)"/>
+    </symbol>
+
+    <!-- 8-point star (compass-like) -->
+    <symbol id="star8" viewBox="-100 -100 200 200">
+      <polygon points="
+        0,-100  20,-35  70,-70  35,-20
+        100,0   35,20   70,70   20,35
+        0,100  -20,35  -70,70  -35,20
+        -100,0 -35,-20 -70,-70 -20,-35
+      " fill="url(#starGradientCool)"/>
+    </symbol>
+
+    <!-- Twinkle dot -->
+    <symbol id="twinkle" viewBox="-50 -50 100 100">
+      <circle r="24" fill="url(#starGradient)"/>
+    </symbol>
+  </defs>
+
+  <!-- Group for stars with glow -->
+  <g filter="url(#glow)">
+    <!-- Large hero stars -->
+    #star5
+    #star8
+    <use href="#star5" x="900"  y="600"  transform="scale(1.6) rotate(32)" #star5
+    <use href="#star8" x="780"  y="150" transform="scale(1r) -->
+    #star5
+    <use href="#star8" x="1080" y="480" transform="scale(0.9) rotate(-hout glow for crispness) -->
+  <g opacity="0.9">
+    #twinkle
+    <use href="#twinkle" x="1540winkle
+    #twinkle
+    #twinkle
+    #twinkle
+    <use href="#twinkle" x="#twinkle" x="520"  y="540"  transform="scale(nette to add depth -->
+  <defs>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.35)"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#vignette)"/>
+</svg>

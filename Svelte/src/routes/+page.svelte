@@ -1,4 +1,5 @@
 <script>
+  import { fade } from "svelte/transition";
   let fornavn="";
   let etternavn="";
   let navn_er_bekreftet = false;
@@ -76,10 +77,12 @@
     </div>
   {/if}
   {#if navn_er_bekreftet}
-    <p class="intro" style="color:#99FF99;"><b>Hei {fornavn} {etternavn}</b>!</p>
-    <div class="centering_container">
-        <button class="bekreft_knapp" on:click={avbekreft_navn}>Angre</button><br>
+    <div in:fade={{duration:1000}} out:fade={{duration:0}}>
+      <p class="intro" style="color:#99FF99;"><b>Hei {fornavn} {etternavn}</b>!</p>
+      <div class="centering_container">
+          <button class="bekreft_knapp" on:click={avbekreft_navn}>Angre</button><br>
+      </div>
+      <p style="padding-top:6ch;">Internettet har forandret verden på måter vi knapt kunne forestille oss. Fra de første eksperimentene med datanettverk til dagens digitale samfunn, er historien full av banebrytende øyeblikk, geniale ideer og mennesker som våget å tenke stort. Bli med på en reise gjennom tid, teknologi og kultur – og se hvordan internett ble selve nerven i vår moderne verden. <a class="link1" href="/textboxes">Videre</a></p>
     </div>
   {/if}
-  <p style="padding-top:6ch;">Internett har forandret verden på måter vi knapt kunne forestille oss. Fra de første eksperimentene med datanettverk til dagens digitale samfunn, er historien full av banebrytende øyeblikk, geniale ideer og mennesker som våget å tenke stort. Bli med på en reise gjennom tid, teknologi og kultur – og se hvordan internett ble selve nerven i vår moderne verden. <a class="link1" href="/textboxes">Videre</a></p>
 </div>
