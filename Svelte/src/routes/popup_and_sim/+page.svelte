@@ -463,7 +463,6 @@
 
 {#if show_tooltip}
 <button 
-    transition:fly={{x: -10, y:10, duration:1000}} 
     style="visibility: hidden; position:absolute;"
     on:click={toggle_tooltip}>
   <h3 
@@ -508,7 +507,7 @@ display: block; background: radial-gradient(circle closest-side, black, #0000000
 </div>
 
 {#if !popup_is_hidden}
-<div transition:fade={{duration:1000}} style="position: fixed; inset: 0; left: 0; top: 0; width: 100vw; height: 100dvh; background: radial-gradient(#000000FF, #00000000); z-index: 9000"></div>
+<div transition:fade={{duration:1000}} style="position: fixed; inset: 0; left: 0; top: 0; width: 100vw; height: 100dvh; background: radial-gradient(#000000FF, #00000080); z-index: 9000"></div>
 <div class="absCenter" style="z-index: 9001">
   <div transition:fly={{x: -10, y:10, duration:1000}} class="popup_size whiteBG bare float noOverflow scroll_box wavyBG" style="z-index: 9002; border-radius: 1%;">
     <div class="noInherit" style="z-index:9003;">
@@ -517,7 +516,9 @@ display: block; background: radial-gradient(circle closest-side, black, #0000000
           <u>Pop-up vinduer</u>
         </h2>
         <p class="align_left_2padding clean_border whiteBG">
-          Pop-up-vinduer dukket opp på slutten av 1990-tallet som en metode for annonsering på nettet. De ble populære fordi de kunne vises utenfor selve nettsiden og dermed fange brukerens oppmerksomhet, men ble raskt upopulære på grunn av hvor forstyrrende de var. Dette førte til utviklingen av pop-up-blokkere og strengere nettleserregler. Cookies, derimot, ble introdusert av Netscape i 1994 som en løsning for å lagre små informasjonsbiter på brukerens maskin, slik at nettsteder kunne huske innstillinger, handlekurver og innloggingsstatus. Over tid ble cookies også brukt til sporing og målrettet reklame, noe som utløste debatter om personvern og førte til reguleringer som GDPR og strengere kontroll over tredjeparts-cookies.
+          Pop-up-vinduer dukket opp på slutten av 1990-tallet som en metode for annonsering på nettet. De ble populære fordi de kunne vises utenfor selve nettsiden og dermed fange brukerens oppmerksomhet, men ble raskt upopulære på grunn av hvor forstyrrende de var. Dette førte til utviklingen av pop-up-blokkere og strengere nettleserregler.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Cookies, derimot, ble introdusert av Netscape i 1994 som en løsning for å lagre små informasjonsbiter på brukerens maskin, slik at nettsteder kunne huske innstillinger, handlekurver og innloggingsstatus. Over tid ble cookies også brukt til sporing og målrettet reklame, noe som utløste debatter om personvern og førte til reguleringer som GDPR og strengere kontroll over tredjeparts-cookies.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;I dag har popups fått en ny rolle: de brukes ofte til å be brukere om å akseptere cookies. Dette har blitt en normalisert del av nettopplevelsen, der de fleste forventer å møte et samtykkebanner når de besøker en ny side. Selv om formålet er å oppfylle lovkrav om informert samtykke, oppleves disse popupene ofte som en rutinehandling der brukeren klikker «Godta» uten å lese detaljene.
         </p>
       </div>
       <div class="center_static" >
