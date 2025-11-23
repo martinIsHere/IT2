@@ -462,15 +462,30 @@
 </style>
 
 {#if show_tooltip}
-<button on:click={toggle_tooltip}>
+<button 
+    transition:fly={{x: -10, y:10, duration:1000}} 
+    style="visibility: hidden; position:absolute;"
+    on:click={toggle_tooltip}>
   <h3 
       transition:fly={{x: -10, y:10, duration:1000}} 
       class="whiteBG float enlarge_anim" 
-      style="color: black; position:fixed; padding: 2ch; left:2ch; bottom: 2ch; cursor: pointer;">
+      style="visibility: visible; black; position:fixed; padding: 2ch; left:2ch; bottom: 2ch; cursor: pointer; display:inline;">
       Fyll ut attributt-feltene, og venstreklikk for å legge til ny planet!
   </h3>
 </button>
 {/if}
+<h1
+    style="
+  display: block;                /* Blokkvisning */
+  text-align: center;            /* Sentrerer teksten */
+  color: #ffffff;                /* Hvit tekst for kontrast */
+  background-color: #2c3e50;     /* Mørk farget bakgrunn */
+  padding: 20px;                 /* Litt luft rundt teksten */
+  font-size: 2.5rem;             /* Stor og tydelig */
+  font-weight: bold;             /* Fremhevet */
+  margin: 0;                     /* Fjern standard margin */
+  "
+  >Solsystemet</h1>
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
     margin-left: auto;
 display: block; background: radial-gradient(#000000FF, #00000000, #00000000)"></canvas>
