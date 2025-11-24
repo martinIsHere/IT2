@@ -1,6 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-    import { mount } from 'svelte';
+  import { onMount } from 'svelte';
 
   // standard farger
   const def_color = [0x0053FF, 0x53FF00, 0xFF0053];
@@ -28,6 +28,11 @@
     }
     return val;
   }
+  // gi korrekt farge ut ifra sliderverdi og standardfarger
+  // strategi her er svært tilfeldig, men resultatet må være "smooth"
+  // og fargevariasjonen passe stor. Det er også viktig at de tilgjengelege
+  // valgene er "gode" og fargerike
+  // her valgte jeg å oppnå så "forskjellige" farger som mulig per index.
   let get_color = (index) => {
     let color_red_channel = def_color[index] & 0xFF0000;
     color_red_channel/=16**4;
@@ -55,7 +60,6 @@
     BG_color3 = (get_color(2));
   }
 
-  import { onMount } from 'svelte';
   onMount(()=>{
     slider_value=0;
   });
@@ -63,6 +67,7 @@
 </script>
 
 <style>
+  /* font */
   @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
   :global(html), :global(body){
     width: 100%;
@@ -98,6 +103,7 @@
   }
 
   .star_backdrop {
+    /* Stjerner i et skalerbart format */
     background-image: url("$lib/assets/Stars.svg");
     background-repeat: repeat;
     margin: 0;
@@ -129,7 +135,6 @@
     margin: auto auto;
   }
   .slider {
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
   }
 
@@ -184,11 +189,13 @@
       violet
     );
     -webkit-background-clip: text; /* Chrome/Safari */
-    background-clip: text;         /* Standard */
-    color: transparent;            /* Hide original text color */
+    background-clip: text; /* Standard */
+    color: transparent; /* Hide original text color */
 
-    background-size: 400% auto;
-    animation: rainbow 10s linear infinite;
+    background-size: 800% auto;
+    animation: rainbow 10s linear infinite; 
+    /* Bruker "@keyframes rainbow": Backgrunnen beveger seg frem og tilbake for alltid.
+       tar 10 sekunder per bevegelse(frem og tilbake) */
   }
 
 

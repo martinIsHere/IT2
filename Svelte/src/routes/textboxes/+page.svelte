@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 60px;
   box-sizing: border-box;
   overflow: hidden;  
 }
@@ -20,12 +20,12 @@
 .image_1 {
   border: 1px solid #ddd;
   border-radius: 4px;
-  background-color:black;
+  background-color:white;
   padding: 5px;
   margin: 10px;
-  width: 800px;
+  width: 600px;
   border-radius: 800px; /* avrund helt uten å lage ellipse*/
-  box-shadow: 10px 2px 10px 10px rgba(0,0,0,0.9);
+  box-shadow: 2px 2px 50px 5px rgba(0,0,0,0.9);
 }
 
 .default_text_banner {
@@ -41,6 +41,7 @@
 .block1{
   border: 2px solid;
   padding: 25px;
+  margin: 10px;
   box-sizing: border-box;
   height: auto;
   width: 80%;
@@ -169,5 +170,5 @@ h1::after{
     </p>
   </div>
   <!-- Ekstra plass under siste bit med tekst -->
-  <div style="min-height:50ch;"></div>
+  <div style="min-height:25ch;"></div>
 </div>
