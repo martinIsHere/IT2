@@ -43,7 +43,8 @@
 <style>
   .bekreft_knapp {
     padding: 2ch 4ch;
-    margin: 4ch 4ch;
+    margin: 2ch 4ch;
+    font-size:15pt; 
     text-align: center;
     background-color: #ffffff20;
     border: 1px solid #ffffff50;
@@ -57,7 +58,8 @@
   }
   .bekreft_knapp_no_hover {
     padding: 2ch 4ch;
-    margin: 4ch 4ch;
+    margin: 2ch 4ch;
+    font-size:15pt; 
     text-align: center;
     background-color: #ffffff20;
     border: 1px solid #ffffff50;
@@ -71,11 +73,11 @@
 <!-- mørkt lag -->
 <div style="z-index:0; position: fixed; min-width: 100vw;min-height: 100vh;left:0;top:0; background-color: #000000bd;"></div>
 <!-- tomplass -->
-<div style="min-height:100px;"></div>
+<div style="min-height:25px;"></div>
 <!-- spørsmål og svar -->
 <div style="z-index:1;position: relative; text-align: center;">
   {#if !finished}
-    <h2>{questions[current].text}</h2>
+    <h2 style="font-size: 50pt;">{questions[current].text}</h2>
     {#if !answer_selected} <!-- holder på å velge svar -->
       {#each questions[current].options as option, i (i)}
         <button class="bekreft_knapp" on:click={() => select_answer(i)}>{option}</button>

@@ -59,9 +59,7 @@
   onMount(()=>{
     slider_value=0;
   });
-
 	let { children } = $props();
-
 </script>
 
 <style>
@@ -214,11 +212,14 @@
   <div style="margin: auto auto;">
     <h3 class="rainbow-text">Bakgrunnsslider</h3>
     <div class="slidercontainer">
-      <input type="range" min="0" max="{max_color_value-1}" 
-        bind:value={slider_value} 
-        oninput={update_BG_colors} 
+      <input 
+        type="range" 
+        min="0" 
+        max="{max_color_value-1}"
+        bind:value={slider_value}
+        oninput={update_BG_colors}
         class="slider"
-        id="bakgrunnsslider">
+        id="bakgrunnsslider"> <!-- max-verdien tilsvarer Max forandring av original verdi, uten å repetere. -->
     </div>
   </div>
 </div>
