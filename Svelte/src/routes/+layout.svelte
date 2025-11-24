@@ -106,7 +106,7 @@
     min-height: 100vh;
     height: 100%;
     background: linear-gradient(to bottom right, var(--bg-color1), var(--bg-color2), var(--bg-color3));
-    background-repeat: no-repeat; /* prevents looping */
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     z-index: -1;
@@ -200,7 +200,7 @@
     );
     -webkit-background-clip: text; /* Chrome/Safari */
     background-clip: text; /* Standard */
-    color: transparent; /* Hide original text color */
+    color: transparent;
 
     background-size: 800% auto;
     animation: rainbow 10s linear infinite; 
