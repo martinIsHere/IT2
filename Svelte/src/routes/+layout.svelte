@@ -19,6 +19,7 @@
       [UT]  : 150 -> 200 -> 255 -> 200 -> 150
       
       Fjerner "hopp" og beholder fargevariasjon
+      Får verdien til å "loop"-e rundt 255, frem og tilbake.
     */
     if(val>max_color_value) {
       val = -(val%max_color_value) // reverserer toppen som ikke ligger i 255
