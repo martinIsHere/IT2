@@ -8,6 +8,8 @@
   // sliderverdien
   let slider_value = $state(0);
 
+  const max_color_value = 255;
+
   let reverse = (val) => {
     /*
       Når fargen overskrider 255 så går den tilbake:
@@ -18,10 +20,10 @@
       
       Fjerner "hopp" og beholder fargevariasjon
     */
-    if(val>255) {
-      return 255-(val%256);
+    if(val>max_color_value) {
+      return max_color_value-(val%max_color_value);
     } 
-    else if (val < 0) {
+    if (val < 0) {
       val = 0;
     }
     return val;
@@ -212,7 +214,7 @@
   <div style="margin: auto auto;">
     <h3 class="rainbow-text">Bakgrunnsslider</h3>
     <div class="slidercontainer">
-      <input type="range" min="0" max="255" 
+      <input type="range" min="0" max="{max_color_value-1}" 
         bind:value={slider_value} 
         oninput={update_BG_colors} 
         class="slider"

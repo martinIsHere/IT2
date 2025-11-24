@@ -24,7 +24,8 @@
 
   // gå videre til neste spørsmål
   function confirm_answer() {
-    if (current < questions.length - 1) {
+    const max_index = questions.length - 1;
+    if (current < max_index) {
       current++;
     } else {
       finished = true;

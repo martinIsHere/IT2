@@ -60,22 +60,16 @@
     }
   };
 
-  let meters_per_screenwidth = 150E9*6;
+  const scaling_factor = 150E9;
+  const default_zoom_value = 6;
+  let meters_per_screenwidth = scaling_factor*default_zoom_value;
   let k_meters_per_pixel = meters_per_screenwidth/canvas_width; // Fra 3.2, k i (3.1), zoom-faktoren
-  const k_increment = k_meters_per_pixel*0.05;
   let c_coordinate_at_origin = new Vector2(0.0,0.0); 
-  function generate_scaled_c(){// Fra 3.2, c i (3.1), koordinaten på planet vist på pixel (0,0)
+  function generate_scaled_c(){
     c_coordinate_at_origin.x = k_meters_per_pixel*canvas_width*0.5;
     c_coordinate_at_origin.y = k_meters_per_pixel*canvas_height*0.5;
   }
   generate_scaled_c();
-  let mouse_drag_start = new Vector2(-1,-1);
-  let user_is_dragging = false;
-  let object_size_pixels = 100;
-  let mb1 = 0;
-  let mb2 = 0;
-  let mb3 = 0;
-  let RUNNING = true;
   const GAMMA = 7E-11;
   const planet_radius_px = 20;
 
@@ -208,6 +202,7 @@
 
     // Get the canvas element
     const canvas = document.getElementById("myCanvas");
+    if (canvas == null) return;
     canvas.addEventListener("click", mouse_event_handler);
     const vektInput = document.getElementById("vekt");
     const fargeInput = document.getElementById("farge");
@@ -215,15 +210,15 @@
     // Get the 2D rendering context
     const canvas_context = canvas.getContext("2d");
 
-    let x = 0.0;
-
     set_new_view_width = () => {
-      k_meters_per_pixel = meters_per_screenwidth_range*150E9/canvas_width;
+      k_meters_per_pixel = meters_per_screenwidth_range*scaling_factor/canvas_width;
       generate_scaled_c();
       console.log(k_meters_per_pixel);
     };
 
     function mouse_event_handler(event){
+      if (vektInput == null) return;
+      if (fargeInput == null) return;
       let mengdeSolmasser = vektInput.value;
       let farge = fargeInput.value;
       if(mengdeSolmasser > 0) {

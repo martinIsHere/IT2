@@ -38,13 +38,6 @@
   background: linear-gradient(to bottom, #00000000, #000000FF,#000000FF);
 }
 
-/* .black_banner { */
-/*   position:relative; */
-/*   width: 100vw; */
-/*   padding: 10px; */
-/*   background-color: black; */
-/* } */
-
 .block1{
   border: 2px solid;
   padding: 25px;
@@ -83,6 +76,7 @@ h1{
   position: relative;
   width:max-content;
 }
+/* regnbue-understreking */
 h1::after{
   content: "";
   background: linear-gradient(to right, #00000000, #FF0000, #00BF00, #0000FF, #00000000);
