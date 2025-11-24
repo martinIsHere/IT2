@@ -17,7 +17,7 @@
   .button_confirm {
     padding: 8px 25px;
     text-align: center;
-    background-color: #ffffff20; /* semi-transparent white */
+    background-color: #ffffff20;
     border: 1px solid #ffffff50;
     border-radius: 8px;
     color: white;

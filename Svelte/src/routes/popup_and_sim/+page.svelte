@@ -377,7 +377,7 @@
     padding: 8px 25px;
     margin: 8ch 0ch;
     text-align: center;
-    background-color: #00000060; /* semi-transparent white */
+    background-color: #00000060;
     border: 1px solid #00000080;
     border-radius: 8px;
     color: white;
@@ -403,10 +403,6 @@
     text-align: left;
   }
 
-  /* .linearBG { */
-  /*   background: linear-gradient(to bottom, #00000000, #FF00FF40, #00000000); */
-  /* } */
-
   .whiteBG {
     background-color: white;
   }
@@ -425,9 +421,9 @@
 
   .flex_container {
     display: flex;
-    flex-direction: column; /* Vertical layout */
-    width: 400px;           /* Or auto */
-    height: auto;           /* Variable size */
+    flex-direction: column;
+    width: 400px;
+    height: auto;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -467,14 +463,14 @@
 
 <h1
     style="
-  display: block;                /* Blokkvisning */
-  text-align: center;            /* Sentrerer teksten */
-  color: #ffffff;                /* Hvit tekst for kontrast */
-  background-color: #2c3e50;     /* Mørk farget bakgrunn */
-  padding: 20px;                 /* Litt luft rundt teksten */
-  font-size: 2.5rem;             /* Stor og tydelig */
-  font-weight: bold;             /* Fremhevet */
-  margin: 0;                     /* Fjern standard margin */
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  background-color: #2c3e50;
+  padding: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
   border-top: white 2px solid;
   border-bottom: white 2px solid;
   "
