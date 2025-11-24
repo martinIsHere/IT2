@@ -174,5 +174,6 @@ h1::after{
       Da internett ble allemannseie, åpnet det døren til en helt ny virkelighet. Plutselig hadde vi enkel tilgang til nyttige verktøy som gjorde hverdagen lettere, og samtidig uendelige muligheter for moro. Spill, simuleringer og kreative applikasjoner ble bare et klikk unna – og forvandlet nettet til et sted der læring, lek og teknologi møtes. <a href="/popup_and_sim">Videre</a>
     </p>
   </div>
+  <!-- Ekstra plass under siste bit med tekst -->
   <div style="min-height:50ch;"></div>
 </div>

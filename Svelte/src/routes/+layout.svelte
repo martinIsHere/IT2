@@ -8,7 +8,7 @@
   // sliderverdien
   let slider_value = $state(0);
 
-  let reverse = (val : number) => {
+  let reverse = (val) => {
     /*
       Når fargen overskrider 255 så går den tilbake:
           For høg verdi, vil retning skiftes mot null
@@ -26,7 +26,7 @@
     }
     return val;
   }
-  let get_color = (index : number) => {
+  let get_color = (index) => {
     let color_red_channel = def_color[index] & 0xFF0000;
     color_red_channel/=16**4;
     color_red_channel += slider_value;

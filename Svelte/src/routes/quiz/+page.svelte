@@ -1,11 +1,4 @@
-
-
-<script>
-  // let questions = [
-  //   { text: "Hva er hovedstaden i Norge?", options: ["Oslo", "Bergen", "Trondheim"], correct: 0 },
-  //   { text: "Hvilket år ble Svelte lansert?", options: ["2016", "2018", "2020"], correct: 1 }
-  // ];
-
+<script lang="ts">
   let questions = [ // array med spørsmål objekt
       { text: "Når ble internett opprinnelig utviklet?", // spørsmålet
       options: ["1960-tallet", "1970-tallet", "1980-tallet"], // svaralternativ
@@ -23,11 +16,13 @@
   let finished = false;
   let answer_selected = false;
 
+  // velg svar uten å gå videre
   function select_answer(index) {
     if (index === questions[current].correct) score++;
     answer_selected = true;
   }
 
+  // gå videre til neste spørsmål
   function confirm_answer() {
     if (current < questions.length - 1) {
       current++;
@@ -37,6 +32,7 @@
     answer_selected = false;
   }
 
+  // bestem farge basert på om spørsmålet er korret
   function get_color(question, index) {
     if (index == question.correct) return "#00FF00";
     return "#FF0000";
@@ -48,7 +44,7 @@
     padding: 2ch 4ch;
     margin: 4ch 4ch;
     text-align: center;
-    background-color: #ffffff20; /* semi-transparent white */
+    background-color: #ffffff20;
     border: 1px solid #ffffff50;
     border-radius: 8px;
     color: white;
@@ -62,7 +58,7 @@
     padding: 2ch 4ch;
     margin: 4ch 4ch;
     text-align: center;
-    background-color: #ffffff20; /* semi-transparent white */
+    background-color: #ffffff20;
     border: 1px solid #ffffff50;
     border-radius: 8px;
     color: white;
@@ -71,8 +67,11 @@
   }
 </style>
 
+<!-- mørkt lag -->
 <div style="z-index:0; position: fixed; min-width: 100vw;min-height: 100vh;left:0;top:0; background-color: #000000bd;"></div>
+<!-- tomplass -->
 <div style="min-height:100px;"></div>
+<!-- spørsmål og svar -->
 <div style="z-index:1;position: relative; text-align: center;">
   {#if !finished}
     <h2>{questions[current].text}</h2>
@@ -86,7 +85,7 @@
       {/each}
       <br><button class="bekreft_knapp" on:click={confirm_answer}>videre</button>
     {/if}
-  {:else}
+  {:else} <!-- har fullført quizen -->
     <h2>Quiz ferdig!</h2>
     <p style="text-align: center;">Du fikk {score} av {questions.length} <span style="color:#00FF00;font-weight:normal;">riktige</span>.</p>
   {/if}

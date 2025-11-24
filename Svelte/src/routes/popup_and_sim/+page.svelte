@@ -22,6 +22,7 @@
 
   //--popup-----------------------
 
+  //--simulering------------------
   const canvas_width=1600;
   const canvas_height=800;
 
@@ -246,7 +247,7 @@
 
     function update_all_objects_attributes(){
       let updateAccelerationFunc = (_in_obj, index, array) => {
-          let obj2 = _in_obj.update_acceleration(array);
+          _in_obj.update_acceleration(array);
       }
       ALL_OBJECTS.forEach(updateAccelerationFunc);
 
@@ -270,9 +271,9 @@
     }
 
     function draw_circle_in_plane(
-                           positionVec, // pygame.Vector2
-                           radius, // uint
-                           color, // pygame.Color
+                           positionVec,
+                           radius,
+                           color,
                            ){
       /*
       Tegn en korrekt skalert sirkel.
@@ -284,9 +285,9 @@
 
       let posVec = transform_plane_to_window(positionVec);
       fillCircle(
-                 posVec.x, posVec.y,
-                 Math.round(radius/k_meters_per_pixel),
-                 color
+        posVec.x, posVec.y,
+        Math.round(radius/k_meters_per_pixel),
+        color
       );
     }
     function draw_obj_in_plane(obj){
@@ -301,25 +302,13 @@
     }
 
     function draw(){
-      // canvas_context.fillStyle = "black";
       // clears by setting whole vieable area to rgba(0,0,0,0)
       canvas_context.clearRect(0, 0, canvas_width, canvas_height);
-      // canvas_context.fillStyle = "blue";
-      // canvas_context.fillRect(x, 100, 150, 150);
-      // canvas_context.fillStyle = "red";
-      // canvas_context.fillRect(x, 10, 150, 50);
-      // fillCircle(x+150*0.5, 400, 150*0.5, "#FFFF00");
 
-      // draw_obj_in_plane(TerraObj);
-      // draw_obj_in_plane(SolObj);
-      // draw_obj_in_plane(MarsObj);
-      // draw_obj_in_plane(MercuryObj);
       draw_all_objects();
     }
 
-    function main_loop(
-      timestamp // int
-    ){
+    function main_loop(){
       // debug
 
       update();
@@ -330,6 +319,7 @@
     }
     requestAnimationFrame(main_loop);
   })
+  //--simulering------------------
 </script>
 
 <style>
@@ -416,20 +406,6 @@
     background-color: #FF000040;
   }
 
-  .button_confirm2 {
-    padding: 8px 25px;
-    text-align: center;
-    background-color: #00000060; /* semi-transparent white */
-    border: 1px solid #00000080;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .button_confirm2:hover {
-    background-color: #FF000040;
-  }
-
   .noInherit {
     all: initial;
   }
@@ -472,10 +448,6 @@
     position: fixed;
     bottom: 0;
     left: 0;
-  }
-
-  .flex_item {
-    padding: 10px;
   }
 </style>
 
