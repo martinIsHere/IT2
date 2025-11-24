@@ -21,10 +21,13 @@
       Fjerner "hopp" og beholder fargevariasjon
     */
     if(val>max_color_value) {
-      return max_color_value-(val%max_color_value);
+      val = max_color_value-(val%max_color_value)+Math.floor(val/max_color_value)*max_color_value - max_color_value;
     } 
     if (val < 0) {
       val = 0;
+    }
+    if (val > max_color_value) {
+      val = reverse(val);
     }
     return val;
   }
@@ -34,12 +37,17 @@
   // valgene er "gode" og fargerike
   // her valgte jeg å oppnå så "forskjellige" farger som mulig per index.
   let get_color = (index) => {
-    let color_red_channel = def_color[index] & 0xFF0000;
-    color_red_channel/=16**4;
-    color_red_channel += slider_value;
+    /*
+    fargeformat:
+      0x FF(rød) FF(grønn) FF(blå)
+    hver FF tilsvarer 1 byte
+    */
+    let color_red_channel = def_color[index] & 0xFF0000; // henter relevante bytes
+    color_red_channel >>= (8*2); // bitshift 2 bytes slik at den røde byten ligger lengst mot høyre
+    color_red_channel += slider_value*2; // legger til slider_value
     color_red_channel = reverse(color_red_channel);
     let color_green_channel = def_color[index] & 0x00FF00;
-    color_green_channel/=16**2;
+    color_green_channel >>= (8*1);
     color_green_channel += slider_value;
     color_green_channel = reverse(color_green_channel);
     let color_blue_channel = def_color[index] & 0x0000FF;

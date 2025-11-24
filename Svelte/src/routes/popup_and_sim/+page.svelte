@@ -273,7 +273,7 @@
       let posVec = transform_plane_to_window(positionVec);
       fillCircle(
         posVec.x, posVec.y,
-        Math.round(radius/k_meters_per_pixel),
+        Math.floor(radius/k_meters_per_pixel),
         color
       );
     }
