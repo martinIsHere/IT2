@@ -223,23 +223,15 @@
       console.log(k_meters_per_pixel);
     };
 
-    // --- main-loop
-    function move_blue_rect(){
-      x+=1;
-      if(x>canvas_width){
-        x=-150;
-      }
-    }
-
     function mouse_event_handler(event){
       let mengdeSolmasser = vektInput.value;
       let farge = fargeInput.value;
       if(mengdeSolmasser > 0) {
-        let temp_obj = new PhysObj(mengdeSolmasser*199E28, 
+        let temp_obj = new PhysObj(mengdeSolmasser*199E28,  // auto-håndterer feil inn-verdier
           transform_window_to_plane(new Vector2(event.offsetX, event.offsetY)),
           new Vector2(0,0),
           new Vector2(0,0),
-          farge
+          farge // auto-håndterer feil inn-verdier
           );
         add_physObj(temp_obj);
       }
