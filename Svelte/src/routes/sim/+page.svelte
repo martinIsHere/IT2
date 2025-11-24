@@ -106,10 +106,6 @@
     }
 
     func1 = (obj, index, array) => {
-      /*
-      function used in "update_acceleration"
-      affects this.gm
-      */
       let vec=obj.s.subt(this.s);
       let length=vec.length();
       if (length!=0.0){
@@ -121,7 +117,7 @@
     update_acceleration(all_objects){
       /*
       Utfører metode for å kalkulere
-      akselerasjon fra seksjon 2.3
+      akselerasjon
       */
       this.gm.x=0.0;
       this.gm.y=0.0;

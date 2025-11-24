@@ -70,7 +70,6 @@
 }
 
 .darken {
-  /*background: linear-gradient(to bottom, #00000000, #00000040, #00000000);*/
   background: radial-gradient(closest-side, #00000060, #00000000);
 }
 h1{
