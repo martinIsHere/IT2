@@ -482,7 +482,7 @@
   border-top: white 2px solid;
   border-bottom: white 2px solid;
   "
-  >En simulering av solsystemet</h1>
+  >En simulering av en liten del av solsystemet</h1>
 <canvas id="myCanvas" width="{canvas_width}" height="{canvas_height}" style="margin-right: auto;
     margin-left: auto;
 display: block; background: radial-gradient(circle closest-side, black, #00000000)"></canvas>

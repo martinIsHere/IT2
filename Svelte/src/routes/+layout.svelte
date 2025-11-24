@@ -21,7 +21,8 @@
       Fjerner "hopp" og beholder fargevariasjon
     */
     if(val>max_color_value) {
-      val = max_color_value-(val%max_color_value)+Math.floor(val/max_color_value)*max_color_value - max_color_value;
+      val = -(val%max_color_value) // reverserer toppen som ikke ligger i 255
+             + Math.floor(val/max_color_value)*max_color_value; // fjerner en blokk med 255
     } 
     if (val < 0) {
       val = 0;
