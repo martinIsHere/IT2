@@ -1,5 +1,5 @@
 <script>
-  import {addNums as importedFuncAddNums} from "./gjenbruk/script.js";
+  import {addNums as importedFuncAddNums, tilfeldigTallMellom} from "./gjenbruk/script.js";
   import {Pi as extPI, LysfartenVakum as extLysfart} from "./gjenbruk/konstanter.js";
   const radius = 1;
   const areal = extPI * radius ** 2;
@@ -9,6 +9,20 @@
   const img1 = "https://next-media.elkjop.com/image/dv_web_D18000134018124/982641/apple-airpods-pro-gen-3-2025-helt-tradlose-hodetelefoner.jpg?w=256&q=75";
   const img2 = "https://next-media.elkjop.com/image/dv_web_D1800013464809/987719/garmin-venu-4-41mm-smartklokke-lunar-goldbone.jpg?w=256&q=75";
   const img3 = "https://next-media.elkjop.com/image/dv_web_D18000127412527/821529/meta-quest-3s-vr-briller-128-gb.jpg?w=256&q=75";
+
+  let min = 0;
+  let max = 0;
+  let validBounds = false;
+  let output = 0;
+
+  const gen = () => {
+    if (min < max) {
+      validBounds = true;
+      output = tilfeldigTallMellom(min, max);
+      return;
+    }
+    validBounds = false;
+  }
 </script>
 
 <h1>Oppgaver</h1>
@@ -32,6 +46,15 @@
   </tbody>
 </table>
 
+<h1>2.07</h1>
+<label for="min">min: <input type="number" bind:value={min} /></label>
+<label for="max">max: <input type="number" bind:value={max} /></label>
+<button on:click={gen}>Generer</button>
+{#if validBounds}
+<p>{output}</p>
+{:else}
+<p>Skriv gyldige grenser</p>
+{/if} 
 <style>
   .styled-table {
     border-collapse: collapse;
