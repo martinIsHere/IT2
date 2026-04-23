@@ -1,0 +1,21 @@
+{
+  "filter": ["geografi"],
+  "min_difficulty": 0,
+  "max_difficulty": 8,
+  "available_themes": [
+  "geografi",
+  "matematikk",
+  "IT",
+  "webutvikling",
+  "astronomi",
+  "historie",
+  "kunst",
+  "naturfag",
+  "biologi",
+  "kjemi",
+  "fysikk",
+  "økonomi",
+  "samfunn",
+  "musikk"
+]
+}
