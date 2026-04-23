@@ -1,478 +1,5 @@
 [
   {
-    "text": "Hva er hovedstaden i Sverige?",
-    "options": ["Oslo", "Stockholm", "Helsinki", "København"],
-    "correct": 1,
-    "themes": ["geografi"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er 12 * 12?",
-    "options": ["144", "124", "132"],
-    "correct": 0,
-    "themes": ["matematikk"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hvilket språk brukes for nettsider?",
-    "options": ["Python", "HTML", "C", "Java"],
-    "correct": 1,
-    "themes": ["webutvikling"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hvilken planet er nærmest solen?",
-    "options": ["Venus", "Jorden", "Merkur", "Mars"],
-    "correct": 2,
-    "themes": ["astronomi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hvem skrev Hamlet?",
-    "options": ["Ibsen", "Shakespeare", "Hemingway"],
-    "correct": 1,
-    "themes": ["kunst"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er fotosyntese?",
-    "options": ["Celledeling", "Energi fra sollys", "Fordøyelse"],
-    "correct": 1,
-    "themes": ["naturfag"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er kjemisk symbol for vann?",
-    "options": ["O2", "H2O", "CO2"],
-    "correct": 1,
-    "themes": ["kjemi", "naturfag"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er tyngdekraften oppdaget av?",
-    "options": ["Newton", "Einstein", "Tesla"],
-    "correct": 0,
-    "themes": ["fysikk"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hvilket år var månelandingen?",
-    "options": ["1969", "1959", "1972"],
-    "correct": 0,
-    "themes": ["historie", "astronomi"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er HTML brukt til?",
-    "options": ["Styling", "Struktur", "Database"],
-    "correct": 1,
-    "themes": ["IT", "webutvikling"],
-    "difficulty": 2
-  },
-
-  {
-    "text": "Hva er hovedstaden i Frankrike?",
-    "options": ["Paris", "Lyon", "Nice"],
-    "correct": 0,
-    "themes": ["geografi"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er 9 + 10?",
-    "options": ["19", "21", "18"],
-    "correct": 0,
-    "themes": ["matematikk"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva brukes CSS til?",
-    "options": ["Logikk", "Styling", "Server"],
-    "correct": 1,
-    "themes": ["IT", "webutvikling"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hvilken planet er størst?",
-    "options": ["Jupiter", "Mars", "Saturn"],
-    "correct": 0,
-    "themes": ["astronomi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hvem malte Picasso?",
-    "options": ["Picasso", "Da Vinci", "Monet"],
-    "correct": 0,
-    "themes": ["kunst"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er cellens kraftverk?",
-    "options": ["Ribosom", "Mitokondrie", "Kjerne"],
-    "correct": 1,
-    "themes": ["biologi"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er CO2?",
-    "options": ["Oksygen", "Karbondioksid", "Hydrogen"],
-    "correct": 1,
-    "themes": ["kjemi", "naturfag"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva måler newton?",
-    "options": ["Tid", "Kraft", "Energi"],
-    "correct": 1,
-    "themes": ["fysikk"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hvilket land vant VM i fotball 2018?",
-    "options": ["Brasil", "Frankrike", "Tyskland"],
-    "correct": 1,
-    "themes": ["sport", "historie"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva betyr HTTP?",
-    "options": ["Protokoll", "Program", "Database"],
-    "correct": 0,
-    "themes": ["IT", "webutvikling"],
-    "difficulty": 3
-  },
-
-  {
-    "text": "Hva er hovedstaden i Italia?",
-    "options": ["Roma", "Milano", "Venezia"],
-    "correct": 0,
-    "themes": ["geografi"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er 100 / 4?",
-    "options": ["20", "25", "30"],
-    "correct": 1,
-    "themes": ["matematikk"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva gjør JavaScript?",
-    "options": ["Styling", "Interaktivitet", "Database"],
-    "correct": 1,
-    "themes": ["IT", "webutvikling"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hvilken planet har ringer?",
-    "options": ["Mars", "Saturn", "Jupiter"],
-    "correct": 1,
-    "themes": ["astronomi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er renessansen?",
-    "options": ["Krig", "Kulturperiode", "Revolusjon"],
-    "correct": 1,
-    "themes": ["historie", "kunst"],
-    "difficulty": 3
-  },
-
-  {
-    "text": "Hva er DNA?",
-    "options": ["Protein", "Arvestoff", "Energi"],
-    "correct": 1,
-    "themes": ["biologi"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er pH?",
-    "options": ["Surhet", "Temperatur", "Trykk"],
-    "correct": 0,
-    "themes": ["kjemi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er lyd?",
-    "options": ["Bølger", "Lys", "Elektrisitet"],
-    "correct": 0,
-    "themes": ["fysikk"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er økonomi?",
-    "options": ["Penger og ressurser", "Språk", "Biologi"],
-    "correct": 0,
-    "themes": ["økonomi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er demokrati?",
-    "options": ["Styresett", "Mat", "Teknologi"],
-    "correct": 0,
-    "themes": ["samfunn"],
-    "difficulty": 2
-  },
-
-  {
-    "text": "Hva er hovedstaden i Tyskland?",
-    "options": ["Berlin", "Munchen", "Hamburg"],
-    "correct": 0,
-    "themes": ["geografi"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er 5^2?",
-    "options": ["10", "20", "25"],
-    "correct": 2,
-    "themes": ["matematikk"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er React?",
-    "options": ["Bibliotek", "Database", "Server"],
-    "correct": 0,
-    "themes": ["IT", "webutvikling"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er solen?",
-    "options": ["Planet", "Stjerne", "Måne"],
-    "correct": 1,
-    "themes": ["astronomi"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er Beethoven kjent for?",
-    "options": ["Malerier", "Musikk", "Bøker"],
-    "correct": 1,
-    "themes": ["musikk"],
-    "difficulty": 2
-  },
-
-  {
-    "text": "Hva er en celle?",
-    "options": ["Minste livsenhet", "Organ", "Molekyl"],
-    "correct": 0,
-    "themes": ["biologi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er salt?",
-    "options": ["NaCl", "H2O", "CO2"],
-    "correct": 0,
-    "themes": ["kjemi"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er energi i fysikk?",
-    "options": ["Evne til arbeid", "Vekt", "Tid"],
-    "correct": 0,
-    "themes": ["fysikk"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er inflasjon?",
-    "options": ["Prisvekst", "Krig", "Skatt"],
-    "correct": 0,
-    "themes": ["økonomi"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er FN?",
-    "options": ["Organisasjon", "Land", "Bedrift"],
-    "correct": 0,
-    "themes": ["samfunn"],
-    "difficulty": 2
-  },
-
-  {
-    "text": "Hva er hovedstaden i Japan?",
-    "options": ["Tokyo", "Kyoto", "Osaka"],
-    "correct": 0,
-    "themes": ["geografi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er 2 * 2 * 2?",
-    "options": ["6", "8", "10"],
-    "correct": 1,
-    "themes": ["matematikk"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er backend?",
-    "options": ["Serverlogikk", "Design", "Tekst"],
-    "correct": 0,
-    "themes": ["IT", "webutvikling"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er Andromeda?",
-    "options": ["Galakse", "Stjerne", "Planet"],
-    "correct": 0,
-    "themes": ["astronomi"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er jazz?",
-    "options": ["Musikksjanger", "Mat", "Språk"],
-    "correct": 0,
-    "themes": ["musikk"],
-    "difficulty": 2
-  },
-
-  {
-    "text": "Hva er evolusjon?",
-    "options": ["Utvikling av arter", "Krig", "Energi"],
-    "correct": 0,
-    "themes": ["biologi"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er syre?",
-    "options": ["Lav pH", "Høy pH", "Metall"],
-    "correct": 0,
-    "themes": ["kjemi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er Newtons 1. lov?",
-    "options": ["Treghet", "Energi", "Lys"],
-    "correct": 0,
-    "themes": ["fysikk"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er budsjett?",
-    "options": ["Plan for penger", "Skole", "Lov"],
-    "correct": 0,
-    "themes": ["økonomi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er lovverk?",
-    "options": ["Regler i samfunn", "Mat", "Teknologi"],
-    "correct": 0,
-    "themes": ["samfunn"],
-    "difficulty": 3
-  },
-
-  {
-    "text": "Hva er HTML-element?",
-    "options": ["Byggekloss", "Database", "Server"],
-    "correct": 0,
-    "themes": ["IT", "webutvikling"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er jorden?",
-    "options": ["Planet", "Stjerne", "Asteroid"],
-    "correct": 0,
-    "themes": ["astronomi", "geografi"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er 1 kilometer?",
-    "options": ["100 meter", "1000 meter", "10 000 meter"],
-    "correct": 1,
-    "themes": ["matematikk"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er git?",
-    "options": ["Versjonskontroll", "Database", "Språk"],
-    "correct": 0,
-    "themes": ["IT"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er opera?",
-    "options": ["Musikkform", "Sport", "Mat"],
-    "correct": 0,
-    "themes": ["musikk"],
-    "difficulty": 3
-  },
-
-  {
-    "text": "Hva er bakterier?",
-    "options": ["Mikroorganismer", "Planter", "Stein"],
-    "correct": 0,
-    "themes": ["biologi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er oksidasjon?",
-    "options": ["Reaksjon med oksygen", "Temperatur", "Energi"],
-    "correct": 0,
-    "themes": ["kjemi"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er lysår?",
-    "options": ["Tid", "Avstand", "Hastighet"],
-    "correct": 1,
-    "themes": ["astronomi", "fysikk"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er renter?",
-    "options": ["Pengekostnad", "Mat", "Lov"],
-    "correct": 0,
-    "themes": ["økonomi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er grunnlov?",
-    "options": ["Landets lover", "Skole", "Bedrift"],
-    "correct": 0,
-    "themes": ["samfunn"],
-    "difficulty": 3
-  },
-
-  {
-    "text": "Hva er DOM i webutvikling?",
-    "options": ["Dokumentstruktur", "Database", "Server"],
-    "correct": 0,
-    "themes": ["IT", "webutvikling"],
-    "difficulty": 4
-  },
-  {
-    "text": "Hva er en komet?",
-    "options": ["Is og støv", "Planet", "Stjerne"],
-    "correct": 0,
-    "themes": ["astronomi"],
-    "difficulty": 2
-  },
-  {
-    "text": "Hva er prosent?",
-    "options": ["Del av 100", "Tall", "Energi"],
-    "correct": 0,
-    "themes": ["matematikk"],
-    "difficulty": 1
-  },
-  {
-    "text": "Hva er API?",
-    "options": ["Grensesnitt", "Database", "Server"],
-    "correct": 0,
-    "themes": ["IT", "webutvikling"],
-    "difficulty": 3
-  },
-  {
-    "text": "Hva er rock?",
-    "options": ["Musikksjanger", "Sport", "Mat"],
-    "correct": 0,
-    "themes": ["musikk"],
-    "difficulty": 2
-  },
-
-  {
-    "text": "Hva er virus i biologi?",
-    "options": ["Smittestoff", "Plante", "Stein"],
-    "correct": 0,
-    "themes": ["biologi"],
-    "difficulty": 3
-  },
-  {
     "text": "Hva er periodisk system?",
     "options": ["Elementoversikt", "Bok", "Planet"],
     "correct": 0,
@@ -505,7 +32,7 @@
     "text": "Hva er flexbox i CSS?",
     "options": ["Layoutsystem", "Database", "Server"],
     "correct": 0,
-    "themes": ["IT", "webutvikling"],
+    "themes": ["webutvikling"],
     "difficulty": 3
   },
   {
@@ -541,7 +68,7 @@
     "text": "Hva er økosystem?",
     "options": ["Samspill i natur", "By", "Lov"],
     "correct": 0,
-    "themes": ["biologi", "naturfag"],
+    "themes": ["naturfag"],
     "difficulty": 3
   },
   {
@@ -993,6 +520,479 @@
     "correct": 0,
     "themes": ["fysikk"],
     "difficulty": 10
+  },
+  {
+    "text": "Hva er hovedstaden i Sverige?",
+    "options": ["Oslo", "Stockholm", "Helsinki", "København"],
+    "correct": 1,
+    "themes": ["geografi"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er 12 * 12?",
+    "options": ["144", "124", "132"],
+    "correct": 0,
+    "themes": ["matematikk"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hvilket språk brukes for nettsider?",
+    "options": ["Python", "HTML", "C", "Java"],
+    "correct": 1,
+    "themes": ["webutvikling"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hvilken planet er nærmest solen?",
+    "options": ["Venus", "Jorden", "Merkur", "Mars"],
+    "correct": 2,
+    "themes": ["astronomi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hvem skrev Hamlet?",
+    "options": ["Ibsen", "Shakespeare", "Hemingway"],
+    "correct": 1,
+    "themes": ["kunst"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er fotosyntese?",
+    "options": ["Celledeling", "Energi fra sollys", "Fordøyelse"],
+    "correct": 1,
+    "themes": ["naturfag"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er kjemisk symbol for vann?",
+    "options": ["O2", "H2O", "CO2"],
+    "correct": 1,
+    "themes": ["kjemi", "naturfag"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hvem knytter vi til tyngdekraften?",
+    "options": ["Newton", "Einstein", "Tesla"],
+    "correct": 0,
+    "themes": ["fysikk"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hvilket år var månelandingen?",
+    "options": ["1969", "1959", "1972"],
+    "correct": 0,
+    "themes": ["historie", "astronomi"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er HTML brukt til?",
+    "options": ["Styling", "Struktur", "Database"],
+    "correct": 1,
+    "themes": ["IT", "webutvikling"],
+    "difficulty": 2
+  },
+
+  {
+    "text": "Hva er hovedstaden i Frankrike?",
+    "options": ["Paris", "Lyon", "Nice"],
+    "correct": 0,
+    "themes": ["geografi"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er 9 + 10?",
+    "options": ["19", "21", "18"],
+    "correct": 0,
+    "themes": ["matematikk"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva brukes CSS til?",
+    "options": ["Logikk", "Styling", "Server"],
+    "correct": 1,
+    "themes": ["IT", "webutvikling"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hvilken planet er størst?",
+    "options": ["Jupiter", "Mars", "Saturn"],
+    "correct": 0,
+    "themes": ["astronomi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hvem malte Picasso?",
+    "options": ["Picasso", "Da Vinci", "Monet"],
+    "correct": 0,
+    "themes": ["kunst"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er cellens kraftverk?",
+    "options": ["Ribosom", "Mitokondrie", "Kjerne"],
+    "correct": 1,
+    "themes": ["biologi"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er CO2?",
+    "options": ["Oksygen", "Karbondioksid", "Hydrogen"],
+    "correct": 1,
+    "themes": ["kjemi", "naturfag"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva måler newton?",
+    "options": ["Tid", "Kraft", "Energi"],
+    "correct": 1,
+    "themes": ["fysikk"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hvilket land vant VM i fotball 2018?",
+    "options": ["Brasil", "Frankrike", "Tyskland"],
+    "correct": 1,
+    "themes": ["sport", "historie"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva betyr HTTP?",
+    "options": ["Protokoll", "Program", "Database"],
+    "correct": 0,
+    "themes": ["IT", "webutvikling"],
+    "difficulty": 3
+  },
+
+  {
+    "text": "Hva er hovedstaden i Italia?",
+    "options": ["Roma", "Milano", "Venezia"],
+    "correct": 0,
+    "themes": ["geografi"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er 100 / 4?",
+    "options": ["20", "25", "30"],
+    "correct": 1,
+    "themes": ["matematikk"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva gjør JavaScript?",
+    "options": ["Styling", "Interaktivitet", "Database"],
+    "correct": 1,
+    "themes": ["IT", "webutvikling"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hvilken planet har ringer?",
+    "options": ["Mars", "Saturn", "Jupiter"],
+    "correct": 1,
+    "themes": ["astronomi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er renessansen?",
+    "options": ["Krig", "Kulturperiode", "Revolusjon"],
+    "correct": 1,
+    "themes": ["historie", "kunst"],
+    "difficulty": 3
+  },
+
+  {
+    "text": "Hva er DNA?",
+    "options": ["Protein", "Arvestoff", "Energi"],
+    "correct": 1,
+    "themes": ["biologi"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er pH?",
+    "options": ["Surhet", "Temperatur", "Trykk"],
+    "correct": 0,
+    "themes": ["kjemi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er lyd?",
+    "options": ["Bølger", "Lys", "Elektrisitet"],
+    "correct": 0,
+    "themes": ["fysikk"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er økonomi?",
+    "options": ["Penger og ressurser", "Språk", "Biologi"],
+    "correct": 0,
+    "themes": ["økonomi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er demokrati?",
+    "options": ["Styresett", "Mat", "Teknologi"],
+    "correct": 0,
+    "themes": ["samfunn"],
+    "difficulty": 2
+  },
+
+  {
+    "text": "Hva er hovedstaden i Tyskland?",
+    "options": ["Berlin", "Munchen", "Hamburg"],
+    "correct": 0,
+    "themes": ["geografi"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er 5^2?",
+    "options": ["10", "20", "25"],
+    "correct": 2,
+    "themes": ["matematikk"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er React?",
+    "options": ["Bibliotek", "Database", "Server"],
+    "correct": 0,
+    "themes": ["IT", "webutvikling"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er solen?",
+    "options": ["Planet", "Stjerne", "Måne"],
+    "correct": 1,
+    "themes": ["astronomi"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er Beethoven kjent for?",
+    "options": ["Malerier", "Musikk", "Bøker"],
+    "correct": 1,
+    "themes": ["musikk"],
+    "difficulty": 2
+  },
+
+  {
+    "text": "Hva er en celle?",
+    "options": ["Minste livsenhet", "Organ", "Molekyl"],
+    "correct": 0,
+    "themes": ["biologi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er salt?",
+    "options": ["NaCl", "H2O", "CO2"],
+    "correct": 0,
+    "themes": ["kjemi"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er energi i fysikk?",
+    "options": ["Evne til arbeid", "Vekt", "Tid"],
+    "correct": 0,
+    "themes": ["fysikk"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er inflasjon?",
+    "options": ["Prisvekst", "Krig", "Skatt"],
+    "correct": 0,
+    "themes": ["økonomi"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er FN?",
+    "options": ["Organisasjon", "Land", "Bedrift"],
+    "correct": 0,
+    "themes": ["samfunn"],
+    "difficulty": 2
+  },
+
+  {
+    "text": "Hva er hovedstaden i Japan?",
+    "options": ["Tokyo", "Kyoto", "Osaka"],
+    "correct": 0,
+    "themes": ["geografi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er 2 * 2 * 2?",
+    "options": ["6", "8", "10"],
+    "correct": 1,
+    "themes": ["matematikk"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er backend?",
+    "options": ["Serverlogikk", "Design", "Tekst"],
+    "correct": 0,
+    "themes": ["IT", "webutvikling"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er Andromeda?",
+    "options": ["Galakse", "Stjerne", "Planet"],
+    "correct": 0,
+    "themes": ["astronomi"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er jazz?",
+    "options": ["Musikksjanger", "Mat", "Språk"],
+    "correct": 0,
+    "themes": ["musikk"],
+    "difficulty": 2
+  },
+
+  {
+    "text": "Hva er evolusjon?",
+    "options": ["Utvikling av arter", "Krig", "Energi"],
+    "correct": 0,
+    "themes": ["biologi"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er syre?",
+    "options": ["Lav pH", "Høy pH", "Metall"],
+    "correct": 0,
+    "themes": ["kjemi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er Newtons 1. lov?",
+    "options": ["Treghet", "Energi", "Lys"],
+    "correct": 0,
+    "themes": ["fysikk"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er budsjett?",
+    "options": ["Plan for penger", "Skole", "Lov"],
+    "correct": 0,
+    "themes": ["økonomi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er lovverk?",
+    "options": ["Regler i samfunn", "Mat", "Teknologi"],
+    "correct": 0,
+    "themes": ["samfunn"],
+    "difficulty": 3
+  },
+
+  {
+    "text": "Hva er HTML-element?",
+    "options": ["Byggekloss", "Database", "Server"],
+    "correct": 0,
+    "themes": ["IT", "webutvikling"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er jorden?",
+    "options": ["Planet", "Stjerne", "Asteroid"],
+    "correct": 0,
+    "themes": ["astronomi", "geografi"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er 1 kilometer?",
+    "options": ["100 meter", "1000 meter", "10 000 meter"],
+    "correct": 1,
+    "themes": ["matematikk"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er git?",
+    "options": ["Versjonskontroll", "Database", "Språk"],
+    "correct": 0,
+    "themes": ["IT"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er opera?",
+    "options": ["Musikkform", "Sport", "Mat"],
+    "correct": 0,
+    "themes": ["musikk"],
+    "difficulty": 3
+  },
+
+  {
+    "text": "Hva er bakterier?",
+    "options": ["Mikroorganismer", "Planter", "Stein"],
+    "correct": 0,
+    "themes": ["biologi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er oksidasjon?",
+    "options": ["Reaksjon med oksygen", "Temperatur", "Energi"],
+    "correct": 0,
+    "themes": ["kjemi"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er lysår?",
+    "options": ["Tid", "Avstand", "Hastighet"],
+    "correct": 1,
+    "themes": ["astronomi", "fysikk"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er renter?",
+    "options": ["Pengekostnad", "Mat", "Lov"],
+    "correct": 0,
+    "themes": ["økonomi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er grunnlov?",
+    "options": ["Landets lover", "Skole", "Bedrift"],
+    "correct": 0,
+    "themes": ["samfunn"],
+    "difficulty": 3
+  },
+
+  {
+    "text": "Hva er DOM i webutvikling?",
+    "options": ["Dokumentstruktur", "Database", "Server"],
+    "correct": 0,
+    "themes": ["IT", "webutvikling"],
+    "difficulty": 4
+  },
+  {
+    "text": "Hva er en komet?",
+    "options": ["Is og støv", "Planet", "Stjerne"],
+    "correct": 0,
+    "themes": ["astronomi"],
+    "difficulty": 2
+  },
+  {
+    "text": "Hva er prosent?",
+    "options": ["Del av 100", "Tall", "Energi"],
+    "correct": 0,
+    "themes": ["matematikk"],
+    "difficulty": 1
+  },
+  {
+    "text": "Hva er API?",
+    "options": ["Grensesnitt", "Database", "Server"],
+    "correct": 0,
+    "themes": ["IT", "webutvikling"],
+    "difficulty": 3
+  },
+  {
+    "text": "Hva er rock?",
+    "options": ["Musikksjanger", "Sport", "Mat"],
+    "correct": 0,
+    "themes": ["musikk"],
+    "difficulty": 2
+  },
+
+  {
+    "text": "Hva er virus i biologi?",
+    "options": ["Smittestoff", "Plante", "Stein"],
+    "correct": 0,
+    "themes": ["biologi"],
+    "difficulty": 3
   },
   {
     "text": "Hva er Hawking-stråling?",
