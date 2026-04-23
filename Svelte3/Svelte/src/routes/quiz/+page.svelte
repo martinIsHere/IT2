@@ -44,7 +44,7 @@
     selected_themes = new Set(selected_themes);
   }
 
-  let shuf_filt_questions = [];
+  let shuffledFilteredQuestions = [];
 
   let current = -1;
   let score = 0;
@@ -53,13 +53,13 @@
 
     // velg svar uten å gå videre
   function select_answer(index) {
-    if (index == shuf_filt_questions[current].correct) score++;
+    if (index == shuffledFilteredQuestions[current].correct) score++;
     answer_selected = true;
   }
 
   // gå videre til neste spørsmål
   function confirm_answer() {
-    const max_index = shuf_filt_questions.length - 1;
+    const max_index = shuffledFilteredQuestions.length - 1;
     if (current < max_index) {
       current++;
     } else {
@@ -166,9 +166,9 @@
 
     const filtered_questions2 = filter_difficulty(filtered_questions, min_difficulty, max_difficulty);
 
-    const shuf_filt_questions_full = shuffle(filtered_questions2);
+    const shuffledFilteredQuestions_full = shuffle(filtered_questions2);
 
-    shuf_filt_questions = shuf_filt_questions_full.slice(0, max_amount_questions);
+    shuffledFilteredQuestions = shuffledFilteredQuestions_full.slice(0, max_amount_questions);
 
     /*
       Her printer jeg listene til konsollen for hvert stadium 
@@ -188,7 +188,7 @@
     }
 
     console.log("Blandet: ");
-    for (const question of shuf_filt_questions) {
+    for (const question of shuffledFilteredQuestions) {
       console.log(question.text);
     }
 
@@ -298,7 +298,7 @@
     <label>Min: {min_difficulty}</label>
     <input
       type="range"
-      min="0"
+      min="1"
       max="10"
       step="1"
       bind:value={min_difficulty}
@@ -307,7 +307,7 @@
     <label>Max: {max_difficulty}</label>
     <input
       type="range"
-      min="0"
+      min="1"
       max="10"
       step="1"
       bind:value={max_difficulty}
@@ -330,30 +330,30 @@
 {:else}
   <div style="z-index:1;position: relative; text-align: center;">
     <!-- Sjekker om den aktive listen med spørsmål er tom. I så fall
-    kan vi ikke bruke `shuf_filt_questions[current]`, det vil gi error. -->
-    {#if shuf_filt_questions.length == 0}
+    kan vi ikke bruke `shuffledFilteredQuestions[current]`, det vil gi error. -->
+    {#if shuffledFilteredQuestions.length == 0}
   <!-- dersom ingen spørsmål passer ønskene -->
         <h2>Ingen spørsmål funnet</h2>
         <button class="bekreft_knapp" on:click={()=>{current=-1; finished=false;}}>Ny quiz</button>
     {:else}
   <!-- spørsmål og svar -->
       {#if !finished}
-        <h2 style="font-size: 50pt;">({current+1}/{shuf_filt_questions.length}) {shuf_filt_questions[current].text}</h2>
+        <h2 style="font-size: 50pt;">({current+1}/{shuffledFilteredQuestions.length}) {shuffledFilteredQuestions[current].text}</h2>
         {#if !answer_selected} <!-- holder på å velge svar -->
-          {#each shuf_filt_questions[current].options as option, i (i)}
+          {#each shuffledFilteredQuestions[current].options as option, i (i)}
             <button class="bekreft_knapp" on:click={() => select_answer(i)}>{option}</button>
           {/each}
           <br><button class="bekreft_knapp" style="color:red; scale:0.8; margin-top:4em;" on:click={() => {finished = true;}}>GI OPP</button>
         {:else} <!-- har valgt, men ikke gått videre-->
-          {#each shuf_filt_questions[current].options as option, i (i)}
-            <button class="bekreft_knapp_no_hover" style="background-color: {get_color(shuf_filt_questions[current], i)};">{option}</button>
+          {#each shuffledFilteredQuestions[current].options as option, i (i)}
+            <button class="bekreft_knapp_no_hover" style="background-color: {get_color(shuffledFilteredQuestions[current], i)};">{option}</button>
           {/each}
           <br><button class="bekreft_knapp" on:click={confirm_answer}>videre</button>
         {/if}
       {:else} <!-- har fullført quizen -->
         <div in:fade={{duration:1000}} out:fade={{duration:0}}>
           <h2>Ferdig!</h2>
-          <p style="text-align: center;">Du fikk {score} av {shuf_filt_questions.length} <span style="color:#00FF00;font-weight:normal;">riktige</span>.</p>
+          <p style="text-align: center;">Du fikk {score} av {shuffledFilteredQuestions.length} <span style="color:#00FF00;font-weight:normal;">riktige</span>.</p>
           <button class="bekreft_knapp" on:click={()=>{current=-1; finished=false;}}>Ny quiz</button>
         </div>
       {/if}
