@@ -30,6 +30,9 @@
   const available_themes = settings.available_themes;
   let selected_themes = new Set(settings.filter);
 
+
+  // disse funksjonene kan flyttes til en utils.js fil når nettsiden blir større.
+  // dette er ikke nødvendig enda siden nettsiden er ørliten.
   function toggle_theme(theme) {
     if (selected_themes.has(theme)) {
       selected_themes.delete(theme);
@@ -50,7 +53,7 @@
 
     // velg svar uten å gå videre
   function select_answer(index) {
-    if (index === shuf_filt_questions[current].correct) score++;
+    if (index == shuf_filt_questions[current].correct) score++;
     answer_selected = true;
   }
 
@@ -310,7 +313,7 @@
       bind:value={max_difficulty}
     />
 
-    <h3>Antall spørsmål</h3>
+    <h3>Maks antall spørsmål</h3>
 
     <label>{max_amount_questions}</label>
     <input
@@ -322,13 +325,13 @@
     />
 
   </div> <!-- start quiz knapp -->
-    <button class="bekreft_knapp_no_hover" on:click={start_quiz}>Start quiz</button>
+    <button class="bekreft_knapp" on:click={start_quiz}>Start quiz</button>
   </div>
 {:else}
   <div style="z-index:1;position: relative; text-align: center;">
     <!-- Sjekker om den aktive listen med spørsmål er tom. I så fall
     kan vi ikke bruke `shuf_filt_questions[current]`, det vil gi error. -->
-    {#if shuf_filt_questions.length === 0}
+    {#if shuf_filt_questions.length == 0}
   <!-- dersom ingen spørsmål passer ønskene -->
         <h2>Ingen spørsmål funnet</h2>
         <button class="bekreft_knapp" on:click={()=>{current=-1; finished=false;}}>Ny quiz</button>

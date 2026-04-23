@@ -10,6 +10,7 @@
 
   const max_color_value = 255;
 
+  // disse funksjonene kan flyttes til en utils.js fil når nettsiden blir større.
   let reverse = (val) => {
     /*
       Når fargen overskrider 255 så går den tilbake:
@@ -215,7 +216,7 @@
 </svelte:head>
 
 <div class="toolbar">
-  <a class="toolbar_link" href="/">Hjem</a>
+  <a class="toolbar_link" href="/">Introduksjon</a>
   <a class="toolbar_link" href="/quiz">Quiz</a>
 </div>
 

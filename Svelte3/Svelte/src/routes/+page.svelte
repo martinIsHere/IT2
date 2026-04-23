@@ -108,7 +108,7 @@
 
 <div class="intro_banner">
   <div in:fade={{duration:1000}} out:fade={{duration:0}}>
-    <h1 class="intro" style="padding-top:60px;">Velkommen til en generell kunnskapsquiz!</h1>
+    <h1 class="intro" style="padding-top:60px;">Velkommen til en akademisk kunnskapsquiz!</h1>
     <div>
       <p style="padding-top:6ch;">Denne quizzen lar deg teste kunnskapen din gjennom et sett med spørsmål som varierer i tema og vanskelighetsgrad. Du kan tilpasse hvilke typer spørsmål du får, og svare i ditt eget tempo. Målet er å få så mange riktige svar som mulig og lære underveis. Det er også inkludert en god mengde 10 av 10 vanskelighetsgrad spørsmål med ekstra mange alternativ. Klarer du disse er du god!</p>
     </div>
